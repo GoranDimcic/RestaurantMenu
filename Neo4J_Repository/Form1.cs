@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Neo4J_Repository.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,12 @@ namespace Neo4J_Repository
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void BtnRestaurant_Click(object sender, EventArgs e)
+        {
+            AddRestaurant form = new AddRestaurant();
+            form.ShowDialog();
         }
     }
 }

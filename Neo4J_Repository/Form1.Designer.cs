@@ -29,23 +29,24 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.button1 = new System.Windows.Forms.Button();
+            this.BtnRestaurant = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.BtnCustomer = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button1
+            // BtnRestaurant
             // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(50, 150);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 150);
-            this.button1.TabIndex = 0;
-            this.button1.UseVisualStyleBackColor = true;
+            this.BtnRestaurant.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnRestaurant.BackgroundImage")));
+            this.BtnRestaurant.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnRestaurant.Location = new System.Drawing.Point(50, 150);
+            this.BtnRestaurant.Name = "BtnRestaurant";
+            this.BtnRestaurant.Size = new System.Drawing.Size(150, 150);
+            this.BtnRestaurant.TabIndex = 0;
+            this.BtnRestaurant.UseVisualStyleBackColor = true;
+            this.BtnRestaurant.Click += new System.EventHandler(this.BtnRestaurant_Click);
             // 
             // button2
             // 
@@ -55,15 +56,15 @@
             this.button2.TabIndex = 1;
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // BtnCustomer
             // 
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.Location = new System.Drawing.Point(450, 150);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(150, 150);
-            this.button3.TabIndex = 2;
-            this.button3.UseVisualStyleBackColor = true;
+            this.BtnCustomer.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnCustomer.BackgroundImage")));
+            this.BtnCustomer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnCustomer.Location = new System.Drawing.Point(450, 150);
+            this.BtnCustomer.Name = "BtnCustomer";
+            this.BtnCustomer.Size = new System.Drawing.Size(150, 150);
+            this.BtnCustomer.TabIndex = 2;
+            this.BtnCustomer.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -101,9 +102,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.BtnCustomer);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.BtnRestaurant);
             this.Name = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -112,9 +113,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BtnRestaurant;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button BtnCustomer;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
