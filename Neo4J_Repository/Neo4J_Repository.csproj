@@ -60,6 +60,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataProvider.cs" />
+    <Compile Include="Domain\Customer.cs" />
+    <Compile Include="Domain\Product.cs" />
+    <Compile Include="Domain\ProductType.cs" />
     <Compile Include="Domain\Restaurant.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -67,19 +70,46 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AddProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddProduct.Designer.cs">
+      <DependentUpon>AddProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AddRestaurant.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\AddRestaurant.Designer.cs">
       <DependentUpon>AddRestaurant.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AddProductType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddProductType.Designer.cs">
+      <DependentUpon>AddProductType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ProductView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProductView.Designer.cs">
+      <DependentUpon>ProductView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddProduct.resx">
+      <DependentUpon>AddProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddProductType.resx">
+      <DependentUpon>AddProductType.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddRestaurant.resx">
       <DependentUpon>AddRestaurant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProductView.resx">
+      <DependentUpon>ProductView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

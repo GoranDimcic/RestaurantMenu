@@ -48,6 +48,12 @@ namespace Neo4J_Repository.Forms
                 MessageBox.Show("You must fill all fields!");
         }
 
+        private void BtnAddProduct_Click(object sender, EventArgs e)
+        {
+            AddProduct form = new AddProduct();
+            form.ShowDialog();
+        }
+
         public bool Validation()
         {
             if (TxtName.Text.Equals("") || TxtAddress.Text.Equals("") || TxtPhone.Text.Equals(""))

@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.BtnRestaurant = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.BtnProduct = new System.Windows.Forms.Button();
             this.BtnCustomer = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -48,13 +48,16 @@
             this.BtnRestaurant.UseVisualStyleBackColor = true;
             this.BtnRestaurant.Click += new System.EventHandler(this.BtnRestaurant_Click);
             // 
-            // button2
+            // BtnProduct
             // 
-            this.button2.Location = new System.Drawing.Point(250, 150);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(150, 150);
-            this.button2.TabIndex = 1;
-            this.button2.UseVisualStyleBackColor = true;
+            this.BtnProduct.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnProduct.BackgroundImage")));
+            this.BtnProduct.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnProduct.Location = new System.Drawing.Point(250, 150);
+            this.BtnProduct.Name = "BtnProduct";
+            this.BtnProduct.Size = new System.Drawing.Size(150, 150);
+            this.BtnProduct.TabIndex = 1;
+            this.BtnProduct.UseVisualStyleBackColor = true;
+            this.BtnProduct.Click += new System.EventHandler(this.BtnProduct_Click);
             // 
             // BtnCustomer
             // 
@@ -80,11 +83,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(275, 325);
+            this.label2.Location = new System.Drawing.Point(285, 325);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 24);
+            this.label2.Size = new System.Drawing.Size(75, 24);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Restaurant";
+            this.label2.Text = "Product";
             // 
             // label3
             // 
@@ -103,7 +106,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BtnCustomer);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.BtnProduct);
             this.Controls.Add(this.BtnRestaurant);
             this.Name = "Form1";
             this.ResumeLayout(false);
@@ -114,7 +117,7 @@
         #endregion
 
         private System.Windows.Forms.Button BtnRestaurant;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button BtnProduct;
         private System.Windows.Forms.Button BtnCustomer;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

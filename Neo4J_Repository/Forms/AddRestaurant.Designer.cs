@@ -38,8 +38,7 @@ namespace Neo4J_Repository.Forms
             this.TxtPhone = new System.Windows.Forms.TextBox();
             this.BtnCreate = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.BtnAddProduct = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -119,26 +118,19 @@ namespace Neo4J_Repository.Forms
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(25, 226);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 20);
+            this.label4.Size = new System.Drawing.Size(64, 20);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Proizvod?";
+            this.label4.Text = "Product";
             // 
-            // textBox1
+            // BtnAddProduct
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(125, 223);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(130, 26);
-            this.textBox1.TabIndex = 8;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(140, 261);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 40);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Dodaj proizvod u restoran";
-            this.button1.UseVisualStyleBackColor = true;
+            this.BtnAddProduct.Location = new System.Drawing.Point(140, 217);
+            this.BtnAddProduct.Name = "BtnAddProduct";
+            this.BtnAddProduct.Size = new System.Drawing.Size(100, 40);
+            this.BtnAddProduct.TabIndex = 9;
+            this.BtnAddProduct.Text = "Add product";
+            this.BtnAddProduct.UseVisualStyleBackColor = true;
+            this.BtnAddProduct.Click += new System.EventHandler(this.BtnAddProduct_Click);
             // 
             // AddRestaurant
             // 
@@ -146,8 +138,7 @@ namespace Neo4J_Repository.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(484, 361);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.BtnAddProduct);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.BtnCreate);
             this.Controls.Add(this.TxtPhone);
@@ -174,7 +165,6 @@ namespace Neo4J_Repository.Forms
         private System.Windows.Forms.TextBox TxtPhone;
         private System.Windows.Forms.Button BtnCreate;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BtnAddProduct;
     }
 }
