@@ -68,6 +68,7 @@
             this.BtnCustomer.Size = new System.Drawing.Size(150, 150);
             this.BtnCustomer.TabIndex = 2;
             this.BtnCustomer.UseVisualStyleBackColor = true;
+            this.BtnCustomer.Click += new System.EventHandler(this.BtnCustomer_Click);
             // 
             // label1
             // 

@@ -60,7 +60,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataProvider.cs" />
+    <Compile Include="Domain\Bill.cs" />
     <Compile Include="Domain\Customer.cs" />
+    <Compile Include="Domain\Discount.cs" />
     <Compile Include="Domain\Product.cs" />
     <Compile Include="Domain\ProductType.cs" />
     <Compile Include="Domain\Restaurant.cs" />
@@ -70,11 +72,23 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AddCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddCustomer.Designer.cs">
+      <DependentUpon>AddCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AddProduct.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\AddProduct.Designer.cs">
       <DependentUpon>AddProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddProductToRestaurant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddProductToRestaurant.Designer.cs">
+      <DependentUpon>AddProductToRestaurant.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\AddRestaurant.cs">
       <SubType>Form</SubType>
@@ -99,8 +113,14 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddCustomer.resx">
+      <DependentUpon>AddCustomer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddProduct.resx">
       <DependentUpon>AddProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddProductToRestaurant.resx">
+      <DependentUpon>AddProductToRestaurant.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddProductType.resx">
       <DependentUpon>AddProductType.cs</DependentUpon>

@@ -54,6 +54,31 @@ namespace Neo4J_Repository
                .ExecuteWithoutResults();
         }
 
+        internal static void AddCustomer(Customer newCustomer)
+        {
+            ConnectToTheBase();
+            client.Cypher
+               .Create("(c:Customer {newCustomer})")
+               .WithParam("newCustomer", newCustomer)
+               .ExecuteWithoutResults();
+        }
+
+        #endregion
+
+        #region Update
+
+        internal static Product UpdateProduct(Product product)
+        {
+            Dictionary<string, object> queryDict = new Dictionary<string, object>();
+            queryDict.Add("Name", product.Name);
+            queryDict.Add("Quantity", product.Quantity);
+            var query = new Neo4jClient.Cypher.CypherQuery("start n=node(*)where(n:Product)and exists(n.Name) and n.Name=~ '" + product.Name +
+                "'set n.Quantity= '" + product.Quantity + "'return n", queryDict, Neo4jClient.Cypher.CypherResultMode.Set);
+            List<Product> products = ((IRawGraphClient)client).ExecuteGetCypherResults<Product>(query).ToList();
+            Product prod = products.Find(x => x.Name == product.Name);
+            return prod;
+        }
+
         #endregion
 
         #region Relations
@@ -148,6 +173,18 @@ namespace Neo4J_Repository
             return restaurants;
         }
 
+        public static List<Product> GetProducts(string restaurant, string product)
+        {
+            ConnectToTheBase();
+            List<Product> prod =
+              client.Cypher.Match("(a:Product)")
+                .Where("a.Name={product}").
+               AndWhere("a.RestaurantName={restaurant}").
+                WithParam("restaurant", restaurant).WithParam("product", product).
+                Return(a => a.As<Product>()).Results.ToList();
+            return prod;
+        }
+
         public static List<Product> GetProducts()
         {
             ConnectToTheBase();
@@ -177,6 +214,17 @@ namespace Neo4J_Repository
                 .Where("s.name={name}").
                 WithParam("name", name).
                 Return(s => s.As<ProductType>()).Results.ToList();
+        }
+
+        public static List<Customer> GetCustomers()
+        {
+            ConnectToTheBase();
+            List<Customer> customers =
+             client.Cypher
+                     .Match("(c:Customer)")
+                     .Return(c => c.As<Customer>())
+                     .Results.ToList();
+            return customers;
         }
 
         #endregion

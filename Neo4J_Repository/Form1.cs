@@ -29,5 +29,11 @@ namespace Neo4J_Repository
             ProductView form = new ProductView();
             form.ShowDialog();
         }
+
+        private void BtnCustomer_Click(object sender, EventArgs e)
+        {
+            AddCustomer form = new AddCustomer();
+            form.ShowDialog();
+        }
     }
 }

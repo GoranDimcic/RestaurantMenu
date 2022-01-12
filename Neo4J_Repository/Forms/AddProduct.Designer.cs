@@ -41,7 +41,7 @@ namespace Neo4J_Repository.Forms
             this.TxtType = new System.Windows.Forms.TextBox();
             this.TxtRestaurant = new System.Windows.Forms.TextBox();
             this.TxtQuantity = new System.Windows.Forms.TextBox();
-            this.BtnCreateProduct = new System.Windows.Forms.Button();
+            this.BtnCreateCustomer = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -158,22 +158,22 @@ namespace Neo4J_Repository.Forms
             this.TxtQuantity.Size = new System.Drawing.Size(130, 26);
             this.TxtQuantity.TabIndex = 12;
             // 
-            // BtnCreateProduct
+            // BtnCreateCustomer
             // 
-            this.BtnCreateProduct.Location = new System.Drawing.Point(140, 285);
-            this.BtnCreateProduct.Name = "BtnCreateProduct";
-            this.BtnCreateProduct.Size = new System.Drawing.Size(100, 40);
-            this.BtnCreateProduct.TabIndex = 13;
-            this.BtnCreateProduct.Text = "Create";
-            this.BtnCreateProduct.UseVisualStyleBackColor = true;
-            this.BtnCreateProduct.Click += new System.EventHandler(this.BtnCreateProduct_Click);
+            this.BtnCreateCustomer.Location = new System.Drawing.Point(140, 285);
+            this.BtnCreateCustomer.Name = "BtnCreateCustomer";
+            this.BtnCreateCustomer.Size = new System.Drawing.Size(100, 40);
+            this.BtnCreateCustomer.TabIndex = 13;
+            this.BtnCreateCustomer.Text = "Create";
+            this.BtnCreateCustomer.UseVisualStyleBackColor = true;
+            this.BtnCreateCustomer.Click += new System.EventHandler(this.BtnCreateProduct_Click);
             // 
             // AddProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 361);
-            this.Controls.Add(this.BtnCreateProduct);
+            this.Controls.Add(this.BtnCreateCustomer);
             this.Controls.Add(this.TxtQuantity);
             this.Controls.Add(this.TxtRestaurant);
             this.Controls.Add(this.TxtType);
@@ -207,6 +207,6 @@ namespace Neo4J_Repository.Forms
         private System.Windows.Forms.TextBox TxtType;
         private System.Windows.Forms.TextBox TxtRestaurant;
         private System.Windows.Forms.TextBox TxtQuantity;
-        private System.Windows.Forms.Button BtnCreateProduct;
+        private System.Windows.Forms.Button BtnCreateCustomer;
     }
 }

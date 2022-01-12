@@ -28,5 +28,11 @@ namespace Neo4J_Repository.Forms
             AddProductType form = new AddProductType();
             form.ShowDialog();
         }
+
+        private void BtnAddProductToRestaurant_Click(object sender, EventArgs e)
+        {
+            AddProductToRestaurant form = new AddProductToRestaurant();
+            form.ShowDialog();
+        }
     }
 }
