@@ -1,7 +1,7 @@
 ﻿
 namespace Neo4J_Repository.Forms
 {
-    partial class AddProductToRestaurant
+    partial class UpdateProductToRestaurant
     {
         /// <summary>
         /// Required designer variable.

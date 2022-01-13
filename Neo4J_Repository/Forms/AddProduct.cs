@@ -86,7 +86,6 @@ namespace Neo4J_Repository.Forms
                     }
                     res.Id = (m + 1).ToString();
 
-
                     DataProvider.AddRestaurant(res);
                     product.RestaurantName = TxtRestaurant.Text;
 

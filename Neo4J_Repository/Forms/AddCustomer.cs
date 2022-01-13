@@ -28,11 +28,8 @@ namespace Neo4J_Repository.Forms
             if (Validation())
             {
                 customer.Name = TxtName.Text;
-                customer.Address = TxtAddress.Text;
-                customer.Phone = TxtPhone.Text;
-                customer.Email = TxtEmail.Text;
+                customer.CreditCard = TxtCreditCard.Text;
                 customer.Bills = new List<Bill>();
-                customer.Discounts = new List<Discount>();
 
                 List<Customer> customers = DataProvider.GetCustomers();
                 int max = -1;
@@ -54,7 +51,7 @@ namespace Neo4J_Repository.Forms
 
         private bool Validation()
         {
-            if (TxtName.Text.Equals("") || TxtAddress.Text.Equals("") || TxtEmail.Text.Equals("") || TxtPhone.Text.Equals(""))
+            if (TxtName.Text.Equals("") || TxtCreditCard.Text.Equals(""))
             {
                 return false;
             }

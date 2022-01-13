@@ -16,6 +16,6 @@ namespace Neo4J_Repository.Domain
 
         public String Phone { get; set; }
 
-        public Dictionary<object, int> kolicina; //meni
+        public Dictionary<object, int> kolicina;
     }
 }

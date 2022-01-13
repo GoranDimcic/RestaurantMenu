@@ -12,13 +12,11 @@ namespace Neo4J_Repository.Domain
 
         public DateTime Date { get; set; }
 
-        public float Price { get; set; }
+        public float TotalPrice { get; set; }
 
         public Customer Customer { get; set; }
 
         public Restaurant Restaurant { get; set; }
-
-        public List<Product> ProductsList { get; set; }
 
         public Dictionary<string, int> Products;
     }

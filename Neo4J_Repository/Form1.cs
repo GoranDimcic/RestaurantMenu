@@ -1,4 +1,5 @@
 ﻿using Neo4J_Repository.Forms;
+using Neo4J_Repository.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -32,7 +33,7 @@ namespace Neo4J_Repository
 
         private void BtnCustomer_Click(object sender, EventArgs e)
         {
-            AddCustomer form = new AddCustomer();
+            CustomerView form = new CustomerView();
             form.ShowDialog();
         }
     }

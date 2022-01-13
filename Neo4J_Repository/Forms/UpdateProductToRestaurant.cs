@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace Neo4J_Repository.Forms
 {
-    public partial class AddProductToRestaurant : Form
+    public partial class UpdateProductToRestaurant : Form
     {
-        public AddProductToRestaurant()
+        public UpdateProductToRestaurant()
         {
             InitializeComponent();
             FillRestaurants();

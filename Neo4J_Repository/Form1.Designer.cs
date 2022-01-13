@@ -102,6 +102,7 @@
             // 
             // Form1
             // 
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(684, 461);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);

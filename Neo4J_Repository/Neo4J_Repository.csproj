@@ -62,7 +62,6 @@
     <Compile Include="DataProvider.cs" />
     <Compile Include="Domain\Bill.cs" />
     <Compile Include="Domain\Customer.cs" />
-    <Compile Include="Domain\Discount.cs" />
     <Compile Include="Domain\Product.cs" />
     <Compile Include="Domain\ProductType.cs" />
     <Compile Include="Domain\Restaurant.cs" />
@@ -71,6 +70,12 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddBill.Designer.cs">
+      <DependentUpon>AddBill.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\AddCustomer.cs">
       <SubType>Form</SubType>
@@ -84,11 +89,17 @@
     <Compile Include="Forms\AddProduct.Designer.cs">
       <DependentUpon>AddProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\AddProductToRestaurant.cs">
+    <Compile Include="View\CustomerView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\AddProductToRestaurant.Designer.cs">
-      <DependentUpon>AddProductToRestaurant.cs</DependentUpon>
+    <Compile Include="View\CustomerView.Designer.cs">
+      <DependentUpon>CustomerView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UpdateProductToRestaurant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UpdateProductToRestaurant.Designer.cs">
+      <DependentUpon>UpdateProductToRestaurant.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\AddRestaurant.cs">
       <SubType>Form</SubType>
@@ -102,10 +113,10 @@
     <Compile Include="Forms\AddProductType.Designer.cs">
       <DependentUpon>AddProductType.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ProductView.cs">
+    <Compile Include="View\ProductView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ProductView.Designer.cs">
+    <Compile Include="View\ProductView.Designer.cs">
       <DependentUpon>ProductView.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -119,8 +130,11 @@
     <EmbeddedResource Include="Forms\AddProduct.resx">
       <DependentUpon>AddProduct.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AddProductToRestaurant.resx">
-      <DependentUpon>AddProductToRestaurant.cs</DependentUpon>
+    <EmbeddedResource Include="View\CustomerView.resx">
+      <DependentUpon>CustomerView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UpdateProductToRestaurant.resx">
+      <DependentUpon>UpdateProductToRestaurant.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddProductType.resx">
       <DependentUpon>AddProductType.cs</DependentUpon>
@@ -128,7 +142,7 @@
     <EmbeddedResource Include="Forms\AddRestaurant.resx">
       <DependentUpon>AddRestaurant.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ProductView.resx">
+    <EmbeddedResource Include="View\ProductView.resx">
       <DependentUpon>ProductView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

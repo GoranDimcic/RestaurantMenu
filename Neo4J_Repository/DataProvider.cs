@@ -69,9 +69,11 @@ namespace Neo4J_Repository
 
         internal static Product UpdateProduct(Product product)
         {
-            Dictionary<string, object> queryDict = new Dictionary<string, object>();
-            queryDict.Add("Name", product.Name);
-            queryDict.Add("Quantity", product.Quantity);
+            Dictionary<string, object> queryDict = new Dictionary<string, object>
+            {
+                { "Name", product.Name },
+                { "Quantity", product.Quantity }
+            };
             var query = new Neo4jClient.Cypher.CypherQuery("start n=node(*)where(n:Product)and exists(n.Name) and n.Name=~ '" + product.Name +
                 "'set n.Quantity= '" + product.Quantity + "'return n", queryDict, Neo4jClient.Cypher.CypherResultMode.Set);
             List<Product> products = ((IRawGraphClient)client).ExecuteGetCypherResults<Product>(query).ToList();
