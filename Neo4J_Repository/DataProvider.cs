@@ -71,11 +71,10 @@ namespace Neo4J_Repository
         {
             Dictionary<string, object> queryDict = new Dictionary<string, object>
             {
-                { "Name", product.Name },
-                { "Quantity", product.Quantity }
+                { "Name", product.Name }
             };
             var query = new Neo4jClient.Cypher.CypherQuery("start n=node(*)where(n:Product)and exists(n.Name) and n.Name=~ '" + product.Name +
-                "'set n.Quantity= '" + product.Quantity + "'return n", queryDict, Neo4jClient.Cypher.CypherResultMode.Set);
+                "'return n", queryDict, Neo4jClient.Cypher.CypherResultMode.Set);
             List<Product> products = ((IRawGraphClient)client).ExecuteGetCypherResults<Product>(query).ToList();
             Product prod = products.Find(x => x.Name == product.Name);
             return prod;
@@ -155,6 +154,25 @@ namespace Neo4J_Repository
 
         #region Get
 
+        public static Restaurant GetRestaurant1(string name)
+        {
+            ConnectToTheBase();
+            return client.Cypher.Match("(s:Restaurant)")
+                .Where("s.Name={name}").
+                WithParam("name", name).
+                Return(s => s.As<Restaurant>()).Results.FirstOrDefault();
+        }
+
+        public static List<Product> GetProducts(Restaurant restaurant)
+        {
+            ConnectToTheBase();
+            List<Product> at = client.Cypher.Match("(r:Product)")
+                .Where("r.Restaurant={restaurant}")
+                .WithParam("restaurant", restaurant)
+                .Return(r => r.As<Product>()).Results.ToList();
+            return at;
+        }
+
         public static List<Restaurant> GetRestaurant(string restaurant)
         {
             ConnectToTheBase();
@@ -175,16 +193,24 @@ namespace Neo4J_Repository
             return restaurants;
         }
 
-        public static List<Product> GetProducts(string restaurant, string product)
+        //public static List<Product> GetProducts(string restaurant)
+        //{
+        //    ConnectToTheBase();
+        //    List<Product> prod =
+        //      client.Cypher.Match("(a:Restaurant)")
+        //        .Where("a.Name={restaurant}").
+        //        WithParam("restaurant", restaurant).
+        //        Return(a => a.As<Product>()).Results.ToList();
+        //    return prod;
+        //}
+
+        public static Product GetProduct(string name)
         {
             ConnectToTheBase();
-            List<Product> prod =
-              client.Cypher.Match("(a:Product)")
-                .Where("a.Name={product}").
-               AndWhere("a.RestaurantName={restaurant}").
-                WithParam("restaurant", restaurant).WithParam("product", product).
-                Return(a => a.As<Product>()).Results.ToList();
-            return prod;
+            return client.Cypher.Match("(s:Product)")
+                .Where("s.Name={name}").
+                WithParam("name", name).
+                Return(s => s.As<Product>()).Results.FirstOrDefault();
         }
 
         public static List<Product> GetProducts()
@@ -194,6 +220,17 @@ namespace Neo4J_Repository
              client.Cypher
                      .Match("(p:Product)")
                      .Return(p => p.As<Product>())
+                     .Results.ToList();
+            return products;
+        }
+
+        public static List<ProductType> GetProductTypes()
+        {
+            ConnectToTheBase();
+            List<ProductType> products =
+             client.Cypher
+                     .Match("(p:ProductType)")
+                     .Return(p => p.As<ProductType>())
                      .Results.ToList();
             return products;
         }
@@ -209,13 +246,13 @@ namespace Neo4J_Repository
             return productTypes;
         }
 
-        public static List<ProductType> GetProductType1(string name)
+        public static ProductType GetProductType1(string name)
         {
             ConnectToTheBase();
             return client.Cypher.Match("(s:ProductType)")
-                .Where("s.name={name}").
+                .Where("s.Name={name}").
                 WithParam("name", name).
-                Return(s => s.As<ProductType>()).Results.ToList();
+                Return(s => s.As<ProductType>()).Results.FirstOrDefault();
         }
 
         public static List<Customer> GetCustomers()

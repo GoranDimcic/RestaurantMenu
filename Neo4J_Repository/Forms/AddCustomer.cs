@@ -47,6 +47,9 @@ namespace Neo4J_Repository.Forms
             }
             else
                 MessageBox.Show("You must fill all fields!");
+
+            CreateOrder form = new CreateOrder(customer);
+            form.ShowDialog();
         }
 
         private bool Validation()

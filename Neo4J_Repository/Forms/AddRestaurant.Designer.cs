@@ -29,16 +29,13 @@ namespace Neo4J_Repository.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddRestaurant));
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.TxtName = new System.Windows.Forms.TextBox();
-            this.TxtAddress = new System.Windows.Forms.TextBox();
             this.TxtPhone = new System.Windows.Forms.TextBox();
             this.BtnCreate = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.BtnAddProduct = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.TxtAddress = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -52,23 +49,12 @@ namespace Neo4J_Repository.Forms
             this.label1.TabIndex = 0;
             this.label1.Text = "Name";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(25, 70);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 20);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Address";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(25, 115);
+            this.label3.Location = new System.Drawing.Point(25, 80);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 20);
             this.label3.TabIndex = 2;
@@ -83,19 +69,10 @@ namespace Neo4J_Repository.Forms
             this.TxtName.TabIndex = 3;
             this.TxtName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtEnter_KeyDown);
             // 
-            // TxtAddress
-            // 
-            this.TxtAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtAddress.Location = new System.Drawing.Point(125, 67);
-            this.TxtAddress.Name = "TxtAddress";
-            this.TxtAddress.Size = new System.Drawing.Size(130, 26);
-            this.TxtAddress.TabIndex = 4;
-            this.TxtAddress.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtEnter_KeyDown);
-            // 
             // TxtPhone
             // 
             this.TxtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtPhone.Location = new System.Drawing.Point(125, 112);
+            this.TxtPhone.Location = new System.Drawing.Point(125, 77);
             this.TxtPhone.Name = "TxtPhone";
             this.TxtPhone.Size = new System.Drawing.Size(130, 26);
             this.TxtPhone.TabIndex = 5;
@@ -103,7 +80,7 @@ namespace Neo4J_Repository.Forms
             // 
             // BtnCreate
             // 
-            this.BtnCreate.Location = new System.Drawing.Point(140, 150);
+            this.BtnCreate.Location = new System.Drawing.Point(142, 183);
             this.BtnCreate.Name = "BtnCreate";
             this.BtnCreate.Size = new System.Drawing.Size(100, 40);
             this.BtnCreate.TabIndex = 6;
@@ -111,41 +88,36 @@ namespace Neo4J_Repository.Forms
             this.BtnCreate.UseVisualStyleBackColor = true;
             this.BtnCreate.Click += new System.EventHandler(this.BtnCreate_Click);
             // 
-            // label4
+            // label2
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(25, 226);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 20);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Product";
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(25, 135);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(68, 20);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Address";
             // 
-            // BtnAddProduct
+            // TxtAddress
             // 
-            this.BtnAddProduct.Location = new System.Drawing.Point(140, 217);
-            this.BtnAddProduct.Name = "BtnAddProduct";
-            this.BtnAddProduct.Size = new System.Drawing.Size(100, 40);
-            this.BtnAddProduct.TabIndex = 9;
-            this.BtnAddProduct.Text = "Add product";
-            this.BtnAddProduct.UseVisualStyleBackColor = true;
-            this.BtnAddProduct.Click += new System.EventHandler(this.BtnAddProduct_Click);
+            this.TxtAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtAddress.Location = new System.Drawing.Point(125, 132);
+            this.TxtAddress.Name = "TxtAddress";
+            this.TxtAddress.Size = new System.Drawing.Size(130, 26);
+            this.TxtAddress.TabIndex = 13;
             // 
             // AddRestaurant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(484, 361);
-            this.Controls.Add(this.BtnAddProduct);
-            this.Controls.Add(this.label4);
+            this.ClientSize = new System.Drawing.Size(484, 318);
+            this.Controls.Add(this.TxtAddress);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.BtnCreate);
             this.Controls.Add(this.TxtPhone);
-            this.Controls.Add(this.TxtAddress);
             this.Controls.Add(this.TxtName);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
             this.Name = "AddRestaurant";
@@ -158,13 +130,11 @@ namespace Neo4J_Repository.Forms
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox TxtName;
-        private System.Windows.Forms.TextBox TxtAddress;
         private System.Windows.Forms.TextBox TxtPhone;
         private System.Windows.Forms.Button BtnCreate;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button BtnAddProduct;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox TxtAddress;
     }
 }

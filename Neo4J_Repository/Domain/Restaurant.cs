@@ -16,6 +16,10 @@ namespace Neo4J_Repository.Domain
 
         public String Phone { get; set; }
 
+        public List<Product> Products { get; set; }
+
+        public List<Bill> Bills { get; set; }
+
         public Dictionary<object, int> kolicina;
     }
 }

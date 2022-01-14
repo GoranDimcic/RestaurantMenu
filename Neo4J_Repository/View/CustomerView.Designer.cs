@@ -32,8 +32,6 @@ namespace Neo4J_Repository.View
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerView));
             this.BtnAddCustomer = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.BtnAddProductType = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -58,25 +56,6 @@ namespace Neo4J_Repository.View
             this.label1.Size = new System.Drawing.Size(108, 20);
             this.label1.TabIndex = 3;
             this.label1.Text = "Add customer";
-            // 
-            // BtnAddProductType
-            // 
-            this.BtnAddProductType.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnAddProductType.Location = new System.Drawing.Point(279, 143);
-            this.BtnAddProductType.Name = "BtnAddProductType";
-            this.BtnAddProductType.Size = new System.Drawing.Size(150, 150);
-            this.BtnAddProductType.TabIndex = 4;
-            this.BtnAddProductType.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(318, 325);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 20);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Poruci";
             // 
             // label3
             // 
@@ -105,8 +84,6 @@ namespace Neo4J_Repository.View
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.BtnAddProductType);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BtnAddCustomer);
             this.Name = "CustomerView";
@@ -120,8 +97,6 @@ namespace Neo4J_Repository.View
 
         private System.Windows.Forms.Button BtnAddCustomer;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button BtnAddProductType;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
     }

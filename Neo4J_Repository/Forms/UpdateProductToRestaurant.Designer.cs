@@ -33,8 +33,8 @@ namespace Neo4J_Repository.Forms
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBoxRestaurant = new System.Windows.Forms.ComboBox();
-            this.comboBoxPorduct = new System.Windows.Forms.ComboBox();
-            this.TxtQuantity = new System.Windows.Forms.TextBox();
+            this.comboBoxProduct = new System.Windows.Forms.ComboBox();
+            this.TxtPrice = new System.Windows.Forms.TextBox();
             this.BtnUpdateProductToRestaurant = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -64,9 +64,9 @@ namespace Neo4J_Repository.Forms
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(25, 135);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 20);
+            this.label3.Size = new System.Drawing.Size(44, 20);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Quantity";
+            this.label3.Text = "Price";
             // 
             // comboBoxRestaurant
             // 
@@ -76,28 +76,28 @@ namespace Neo4J_Repository.Forms
             this.comboBoxRestaurant.Name = "comboBoxRestaurant";
             this.comboBoxRestaurant.Size = new System.Drawing.Size(130, 28);
             this.comboBoxRestaurant.TabIndex = 3;
-            this.comboBoxRestaurant.SelectedIndexChanged += new System.EventHandler(this.ComboBoxRestaurant_SelectedIndexChanged);
+            this.comboBoxRestaurant.SelectedIndexChanged += new System.EventHandler(this.comboBoxRestaurant_SelectedIndexChanged);
             // 
-            // comboBoxPorduct
+            // comboBoxProduct
             // 
-            this.comboBoxPorduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxPorduct.FormattingEnabled = true;
-            this.comboBoxPorduct.Location = new System.Drawing.Point(150, 77);
-            this.comboBoxPorduct.Name = "comboBoxPorduct";
-            this.comboBoxPorduct.Size = new System.Drawing.Size(130, 28);
-            this.comboBoxPorduct.TabIndex = 4;
+            this.comboBoxProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxProduct.FormattingEnabled = true;
+            this.comboBoxProduct.Location = new System.Drawing.Point(150, 77);
+            this.comboBoxProduct.Name = "comboBoxProduct";
+            this.comboBoxProduct.Size = new System.Drawing.Size(130, 28);
+            this.comboBoxProduct.TabIndex = 4;
             // 
-            // TxtQuantity
+            // TxtPrice
             // 
-            this.TxtQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtQuantity.Location = new System.Drawing.Point(150, 137);
-            this.TxtQuantity.Name = "TxtQuantity";
-            this.TxtQuantity.Size = new System.Drawing.Size(130, 26);
-            this.TxtQuantity.TabIndex = 5;
+            this.TxtPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtPrice.Location = new System.Drawing.Point(150, 132);
+            this.TxtPrice.Name = "TxtPrice";
+            this.TxtPrice.Size = new System.Drawing.Size(130, 26);
+            this.TxtPrice.TabIndex = 5;
             // 
             // BtnUpdateProductToRestaurant
             // 
-            this.BtnUpdateProductToRestaurant.Location = new System.Drawing.Point(165, 175);
+            this.BtnUpdateProductToRestaurant.Location = new System.Drawing.Point(165, 180);
             this.BtnUpdateProductToRestaurant.Name = "BtnUpdateProductToRestaurant";
             this.BtnUpdateProductToRestaurant.Size = new System.Drawing.Size(100, 40);
             this.BtnUpdateProductToRestaurant.TabIndex = 15;
@@ -105,20 +105,20 @@ namespace Neo4J_Repository.Forms
             this.BtnUpdateProductToRestaurant.UseVisualStyleBackColor = true;
             this.BtnUpdateProductToRestaurant.Click += new System.EventHandler(this.BtnUpdateProductToRestaurant_Click);
             // 
-            // AddProductToRestaurant
+            // UpdateProductToRestaurant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 261);
             this.Controls.Add(this.BtnUpdateProductToRestaurant);
-            this.Controls.Add(this.TxtQuantity);
-            this.Controls.Add(this.comboBoxPorduct);
+            this.Controls.Add(this.TxtPrice);
+            this.Controls.Add(this.comboBoxProduct);
             this.Controls.Add(this.comboBoxRestaurant);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "AddProductToRestaurant";
-            this.Text = "AddProductToRestaurant";
+            this.Name = "UpdateProductToRestaurant";
+            this.Text = "UpdateProductToRestaurant";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -130,8 +130,8 @@ namespace Neo4J_Repository.Forms
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox comboBoxRestaurant;
-        private System.Windows.Forms.ComboBox comboBoxPorduct;
-        private System.Windows.Forms.TextBox TxtQuantity;
+        private System.Windows.Forms.ComboBox comboBoxProduct;
+        private System.Windows.Forms.TextBox TxtPrice;
         private System.Windows.Forms.Button BtnUpdateProductToRestaurant;
     }
 }

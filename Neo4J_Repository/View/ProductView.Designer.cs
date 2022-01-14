@@ -42,7 +42,7 @@ namespace Neo4J_Repository.Forms
             // 
             this.BtnCreateNewProduct.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnCreateNewProduct.BackgroundImage")));
             this.BtnCreateNewProduct.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnCreateNewProduct.Location = new System.Drawing.Point(50, 150);
+            this.BtnCreateNewProduct.Location = new System.Drawing.Point(250, 100);
             this.BtnCreateNewProduct.Name = "BtnCreateNewProduct";
             this.BtnCreateNewProduct.Size = new System.Drawing.Size(150, 150);
             this.BtnCreateNewProduct.TabIndex = 0;
@@ -53,7 +53,7 @@ namespace Neo4J_Repository.Forms
             // 
             this.BtnAddProductToRestaurant.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnAddProductToRestaurant.BackgroundImage")));
             this.BtnAddProductToRestaurant.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnAddProductToRestaurant.Location = new System.Drawing.Point(450, 150);
+            this.BtnAddProductToRestaurant.Location = new System.Drawing.Point(450, 100);
             this.BtnAddProductToRestaurant.Name = "BtnAddProductToRestaurant";
             this.BtnAddProductToRestaurant.Size = new System.Drawing.Size(150, 150);
             this.BtnAddProductToRestaurant.TabIndex = 2;
@@ -64,7 +64,7 @@ namespace Neo4J_Repository.Forms
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(50, 325);
+            this.label1.Location = new System.Drawing.Point(250, 275);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(148, 20);
             this.label1.TabIndex = 2;
@@ -74,7 +74,7 @@ namespace Neo4J_Repository.Forms
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(470, 325);
+            this.label2.Location = new System.Drawing.Point(470, 275);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(120, 20);
             this.label2.TabIndex = 3;
@@ -84,7 +84,7 @@ namespace Neo4J_Repository.Forms
             // 
             this.BtnAddProductType.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnAddProductType.BackgroundImage")));
             this.BtnAddProductType.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnAddProductType.Location = new System.Drawing.Point(250, 150);
+            this.BtnAddProductType.Location = new System.Drawing.Point(50, 100);
             this.BtnAddProductType.Name = "BtnAddProductType";
             this.BtnAddProductType.Size = new System.Drawing.Size(150, 150);
             this.BtnAddProductType.TabIndex = 1;
@@ -95,7 +95,7 @@ namespace Neo4J_Repository.Forms
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(252, 325);
+            this.label3.Location = new System.Drawing.Point(50, 275);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(149, 20);
             this.label3.TabIndex = 4;
@@ -106,7 +106,7 @@ namespace Neo4J_Repository.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(684, 461);
+            this.ClientSize = new System.Drawing.Size(684, 411);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.BtnAddProductType);
             this.Controls.Add(this.label2);

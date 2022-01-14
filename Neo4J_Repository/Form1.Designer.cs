@@ -41,7 +41,7 @@
             // 
             this.BtnRestaurant.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnRestaurant.BackgroundImage")));
             this.BtnRestaurant.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnRestaurant.Location = new System.Drawing.Point(50, 150);
+            this.BtnRestaurant.Location = new System.Drawing.Point(250, 100);
             this.BtnRestaurant.Name = "BtnRestaurant";
             this.BtnRestaurant.Size = new System.Drawing.Size(150, 150);
             this.BtnRestaurant.TabIndex = 0;
@@ -52,7 +52,7 @@
             // 
             this.BtnProduct.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnProduct.BackgroundImage")));
             this.BtnProduct.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnProduct.Location = new System.Drawing.Point(250, 150);
+            this.BtnProduct.Location = new System.Drawing.Point(50, 100);
             this.BtnProduct.Name = "BtnProduct";
             this.BtnProduct.Size = new System.Drawing.Size(150, 150);
             this.BtnProduct.TabIndex = 1;
@@ -63,7 +63,7 @@
             // 
             this.BtnCustomer.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnCustomer.BackgroundImage")));
             this.BtnCustomer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnCustomer.Location = new System.Drawing.Point(450, 150);
+            this.BtnCustomer.Location = new System.Drawing.Point(450, 100);
             this.BtnCustomer.Name = "BtnCustomer";
             this.BtnCustomer.Size = new System.Drawing.Size(150, 150);
             this.BtnCustomer.TabIndex = 2;
@@ -74,7 +74,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(75, 325);
+            this.label1.Location = new System.Drawing.Point(275, 275);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(99, 24);
             this.label1.TabIndex = 3;
@@ -84,7 +84,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(285, 325);
+            this.label2.Location = new System.Drawing.Point(85, 275);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 24);
             this.label2.TabIndex = 4;
@@ -94,7 +94,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(485, 325);
+            this.label3.Location = new System.Drawing.Point(485, 275);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(91, 24);
             this.label3.TabIndex = 5;
@@ -103,7 +103,7 @@
             // Form1
             // 
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(684, 461);
+            this.ClientSize = new System.Drawing.Size(684, 411);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);

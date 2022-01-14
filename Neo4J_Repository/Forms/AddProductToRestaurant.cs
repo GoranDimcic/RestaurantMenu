@@ -11,18 +11,31 @@ using System.Windows.Forms;
 
 namespace Neo4J_Repository.Forms
 {
-    public partial class UpdateProductToRestaurant : Form
+    public partial class AddProductToRestaurant : Form
     {
-        public UpdateProductToRestaurant()
+        public Restaurant restaurant;
+
+        public AddProductToRestaurant()
         {
             InitializeComponent();
-
             FillRestaurants();
+            FillProducts();
         }
 
-        private void BtnUpdateProductToRestaurant_Click(object sender, EventArgs e)
+        private void BtnAdd_Click(object sender, EventArgs e)
         {
+            restaurant = DataProvider.GetRestaurant1(comboBox2.SelectedItem.ToString());
 
+            List<String> selected = new List<String>();
+            foreach (String s in checkedListBox1.CheckedItems)
+            {
+                selected.Add(s);
+                Product p = DataProvider.GetProduct(s);
+                restaurant.Products.Add(p);
+                //p.Restaurants.Add(restaurant);
+                DataProvider.AddRelationProductRestaurant(p, restaurant);
+                DataProvider.AddRelationRestaurantProduct(restaurant, p);
+            }
         }
 
         public void FillRestaurants()
@@ -38,32 +51,18 @@ namespace Neo4J_Repository.Forms
 
             foreach (string s in filter)
             {
-                comboBoxRestaurant.Items.Add(s);
+                comboBox2.Items.Add(s);
             }
         }
 
         public void FillProducts()
         {
-            Restaurant restaurant = DataProvider.GetRestaurant1(comboBoxRestaurant.SelectedItem.ToString());
-
             List<Product> products = DataProvider.GetProducts();
-            List<string> d = new List<string>();
+
             foreach (Product product in products)
             {
-                d.Add(product.Name);
+                checkedListBox1.Items.Add(product.Name);
             }
-
-            List<string> filter = d.Distinct().ToList();
-
-            foreach (string s in filter)
-            {
-                comboBoxProduct.Items.Add(s);
-            }
-        }
-
-        private void comboBoxRestaurant_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            FillProducts();
         }
     }
 }

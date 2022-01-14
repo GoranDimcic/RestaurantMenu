@@ -28,8 +28,9 @@ namespace Neo4J_Repository.Forms
             if (this.Validation())
             {
                 restaurant.Name = TxtName.Text;
-                restaurant.Address = TxtAddress.Text;
                 restaurant.Phone = TxtPhone.Text;
+                restaurant.Address = TxtAddress.Text;
+                restaurant.Products = new List<Product>();
 
                 List<Restaurant> restaurants = DataProvider.GetRestaurants();
                 int max = -1;
@@ -40,6 +41,7 @@ namespace Neo4J_Repository.Forms
                         max = int.Parse(restaurant.Id);
                 }
                 restaurant.Id = (max + 1).ToString();
+
                 DataProvider.AddRestaurant(restaurant);
 
                 DialogResult = DialogResult.OK;
@@ -48,15 +50,9 @@ namespace Neo4J_Repository.Forms
                 MessageBox.Show("You must fill all fields!");
         }
 
-        private void BtnAddProduct_Click(object sender, EventArgs e)
-        {
-            AddProduct form = new AddProduct();
-            form.ShowDialog();
-        }
-
         public bool Validation()
         {
-            if (TxtName.Text.Equals("") || TxtAddress.Text.Equals("") || TxtPhone.Text.Equals(""))
+            if (TxtName.Text.Equals("") || TxtPhone.Text.Equals("") || TxtAddress.Text.Equals(""))
                 return false;
             return true;
         }

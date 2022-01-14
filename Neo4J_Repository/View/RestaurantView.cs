@@ -11,22 +11,23 @@ using System.Windows.Forms;
 
 namespace Neo4J_Repository.View
 {
-    public partial class CustomerView : Form
+    public partial class RestaurantView : Form
     {
-        public CustomerView()
+        public RestaurantView()
         {
             InitializeComponent();
         }
 
-        private void BtnAddCustomer_Click(object sender, EventArgs e)
+        private void BtnCreateNewRestaurant_Click(object sender, EventArgs e)
         {
-            AddCustomer form = new AddCustomer();
+            AddRestaurant form = new AddRestaurant();
             form.ShowDialog();
         }
 
-        private void BtnAddOrder_Click(object sender, EventArgs e)
+        private void BtnAddProductTypeToRestaurant_Click(object sender, EventArgs e)
         {
-
+            AddProductToRestaurant form = new AddProductToRestaurant();
+            form.ShowDialog();
         }
     }
 }

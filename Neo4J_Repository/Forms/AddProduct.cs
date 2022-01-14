@@ -16,11 +16,31 @@ namespace Neo4J_Repository.Forms
     {
         public Product product;
         public GraphClient graphClient;
+        //public List<Product> Products;
 
         public AddProduct()
         {
             InitializeComponent();
             product = new Product();
+
+            FillProducts();
+        }
+
+        public void FillProducts()
+        {
+            List<ProductType> products = DataProvider.GetProductTypes();
+            List<string> d = new List<string>();
+            foreach (ProductType productType in products)
+            {
+                d.Add(productType.Name);
+            }
+
+            List<string> filter = d.Distinct().ToList();
+
+            foreach (string s in filter)
+            {
+                comboBoxProductTypes.Items.Add(s);
+            }
         }
 
         private void BtnCreateProduct_Click(object sender, EventArgs e)
@@ -28,9 +48,9 @@ namespace Neo4J_Repository.Forms
             if (Validation())
             {
                 product.Name = TxtName.Text;
+                product.Description = TxtDescription.Text;
                 product.Weight = float.Parse(TxtWeight.Text);
                 product.Price = float.Parse(TxtPrice.Text);
-                product.Quantity = int.Parse(TxtQuantity.Text);
 
                 List<Product> products = DataProvider.GetProducts();
                 int max = -1;
@@ -41,67 +61,16 @@ namespace Neo4J_Repository.Forms
                 }
 
                 product.Id = (max + 1).ToString();
-                product.RestaurantName = TxtRestaurant.Text;
                 DataProvider.AddProduct(product);
 
-                if (DataProvider.GetProductType1(TxtType.Text).Count == 0)
-                {
-                    ProductType productType = new ProductType
-                    {
-                        Name = TxtType.Text,
-                    };
+                String type = comboBoxProductTypes.Text;
+                ProductType type1 = DataProvider.GetProductType1(type);
 
-                    int m = -1;
-                    foreach (ProductType pt in DataProvider.GetProductType())
-                    {
-                        if (int.Parse(pt.Id) > m)
-                            m = int.Parse(pt.Id);
-                    }
+                type1.Products = new List<Product>();
+                type1.Products.Add(product);
 
-                    productType.Id = (m + 1).ToString();
-                    DataProvider.AddProductType(productType);
-                    product.ProductType = productType;
-                    DataProvider.AddRelationProductProductType(product, productType);
-                    DataProvider.AddRelationProductTypeProduct(productType, product);
-                }
-                else
-                {
-                    product.ProductType = DataProvider.GetProductType1(TxtType.Text)[0];
-                    DataProvider.AddRelationProductProductType(product, DataProvider.GetProductType1(TxtType.Text)[0]);
-                    DataProvider.AddRelationProductTypeProduct(DataProvider.GetProductType1(TxtType.Text)[0], product);
-                }
-
-                if (DataProvider.GetRestaurant(TxtRestaurant.Text).Count == 0)
-                {
-                    Restaurant res = new Restaurant
-                    {
-                        Name = TxtRestaurant.Text,
-                    };
-
-                    int m = -1;
-                    foreach (Restaurant r in DataProvider.GetRestaurants())
-                    {
-                        if (int.Parse(r.Id) > m)
-                            m = int.Parse(r.Id);
-                    }
-                    res.Id = (m + 1).ToString();
-
-                    DataProvider.AddRestaurant(res);
-                    product.RestaurantName = TxtRestaurant.Text;
-
-                    DataProvider.AddRelationProductRestaurant(product, res);
-                    DataProvider.AddRelationRestaurantProduct(res, product);
-                }
-                else
-                {
-                    product.RestaurantName = TxtRestaurant.Text;
-                    product.Restaurant = DataProvider.GetRestaurant(TxtRestaurant.Text)[0];
-                    DataProvider.AddRelationProductRestaurant(product, DataProvider.GetRestaurant(TxtRestaurant.Text)[0]);
-                    DataProvider.AddRelationRestaurantProduct(DataProvider.GetRestaurant(TxtRestaurant.Text)[0], product);
-                }
-
-                Close();
-                DialogResult = DialogResult.OK;
+                DataProvider.AddRelationProductProductType(product, type1);
+                DataProvider.AddRelationProductTypeProduct(type1, product);
             }
             else
             {
@@ -111,7 +80,7 @@ namespace Neo4J_Repository.Forms
 
         public bool Validation()
         {
-            if (TxtName.Text.Equals("") || TxtPrice.Text.Equals("") || TxtQuantity.Text.Equals("") || TxtRestaurant.Text.Equals("") || TxtType.Text.Equals("") || TxtWeight.Text.Equals(""))
+            if (TxtName.Text.Equals("") || TxtWeight.Text.Equals("") || TxtPrice.Text.Equals("") || TxtDescription.Text.Equals(""))
             {
                 return false;
             }

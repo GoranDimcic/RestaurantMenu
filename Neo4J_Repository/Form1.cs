@@ -21,7 +21,7 @@ namespace Neo4J_Repository
 
         private void BtnRestaurant_Click(object sender, EventArgs e)
         {
-            AddRestaurant form = new AddRestaurant();
+            RestaurantView form = new RestaurantView();
             form.ShowDialog();
         }
 
