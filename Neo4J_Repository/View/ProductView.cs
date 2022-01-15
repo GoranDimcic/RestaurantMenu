@@ -17,21 +17,21 @@ namespace Neo4J_Repository.Forms
             InitializeComponent();
         }
 
+        private void BtnCreateProductType_Click(object sender, EventArgs e)
+        {
+            AddProductType form = new AddProductType();
+            form.ShowDialog();
+        }
+
         private void BtnCreateNewProduct_Click(object sender, EventArgs e)
         {
             AddProduct form = new AddProduct();
             form.ShowDialog();
         }
 
-        private void BtnAddProductType_Click(object sender, EventArgs e)
+        private void BtnUpdateProduct_Click(object sender, EventArgs e)
         {
-            AddProductType form = new AddProductType();
-            form.ShowDialog();
-        }
-
-        private void BtnAddProductToRestaurant_Click(object sender, EventArgs e)
-        {
-            UpdateProductToRestaurant form = new UpdateProductToRestaurant();
+            UpdateProduct form = new UpdateProduct();
             form.ShowDialog();
         }
     }

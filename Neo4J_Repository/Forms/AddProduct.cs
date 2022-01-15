@@ -16,7 +16,6 @@ namespace Neo4J_Repository.Forms
     {
         public Product product;
         public GraphClient graphClient;
-        //public List<Product> Products;
 
         public AddProduct()
         {
@@ -71,6 +70,8 @@ namespace Neo4J_Repository.Forms
 
                 DataProvider.AddRelationProductProductType(product, type1);
                 DataProvider.AddRelationProductTypeProduct(type1, product);
+
+                DialogResult = DialogResult.OK;
             }
             else
             {
@@ -85,6 +86,12 @@ namespace Neo4J_Repository.Forms
                 return false;
             }
             return true;
+        }
+
+        private void EnterClick_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                BtnCreateProduct.PerformClick();
         }
     }
 }

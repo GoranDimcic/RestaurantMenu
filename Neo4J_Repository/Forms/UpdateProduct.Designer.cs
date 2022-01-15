@@ -1,7 +1,7 @@
 ﻿
 namespace Neo4J_Repository.Forms
 {
-    partial class UpdateProductToRestaurant
+    partial class UpdateProduct
     {
         /// <summary>
         /// Required designer variable.
@@ -35,7 +35,7 @@ namespace Neo4J_Repository.Forms
             this.comboBoxRestaurant = new System.Windows.Forms.ComboBox();
             this.comboBoxProduct = new System.Windows.Forms.ComboBox();
             this.TxtPrice = new System.Windows.Forms.TextBox();
-            this.BtnUpdateProductToRestaurant = new System.Windows.Forms.Button();
+            this.BtnUpdateProduct = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -76,7 +76,7 @@ namespace Neo4J_Repository.Forms
             this.comboBoxRestaurant.Name = "comboBoxRestaurant";
             this.comboBoxRestaurant.Size = new System.Drawing.Size(130, 28);
             this.comboBoxRestaurant.TabIndex = 3;
-            this.comboBoxRestaurant.SelectedIndexChanged += new System.EventHandler(this.comboBoxRestaurant_SelectedIndexChanged);
+            this.comboBoxRestaurant.SelectedIndexChanged += new System.EventHandler(this.ComboBoxRestaurant_SelectedIndexChanged);
             // 
             // comboBoxProduct
             // 
@@ -95,30 +95,30 @@ namespace Neo4J_Repository.Forms
             this.TxtPrice.Size = new System.Drawing.Size(130, 26);
             this.TxtPrice.TabIndex = 5;
             // 
-            // BtnUpdateProductToRestaurant
+            // BtnUpdateProduct
             // 
-            this.BtnUpdateProductToRestaurant.Location = new System.Drawing.Point(165, 180);
-            this.BtnUpdateProductToRestaurant.Name = "BtnUpdateProductToRestaurant";
-            this.BtnUpdateProductToRestaurant.Size = new System.Drawing.Size(100, 40);
-            this.BtnUpdateProductToRestaurant.TabIndex = 15;
-            this.BtnUpdateProductToRestaurant.Text = "Update";
-            this.BtnUpdateProductToRestaurant.UseVisualStyleBackColor = true;
-            this.BtnUpdateProductToRestaurant.Click += new System.EventHandler(this.BtnUpdateProductToRestaurant_Click);
+            this.BtnUpdateProduct.Location = new System.Drawing.Point(165, 180);
+            this.BtnUpdateProduct.Name = "BtnUpdateProduct";
+            this.BtnUpdateProduct.Size = new System.Drawing.Size(100, 40);
+            this.BtnUpdateProduct.TabIndex = 6;
+            this.BtnUpdateProduct.Text = "Update";
+            this.BtnUpdateProduct.UseVisualStyleBackColor = true;
+            this.BtnUpdateProduct.Click += new System.EventHandler(this.BtnUpdateProduct_Click);
             // 
-            // UpdateProductToRestaurant
+            // UpdateProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 261);
-            this.Controls.Add(this.BtnUpdateProductToRestaurant);
+            this.Controls.Add(this.BtnUpdateProduct);
             this.Controls.Add(this.TxtPrice);
             this.Controls.Add(this.comboBoxProduct);
             this.Controls.Add(this.comboBoxRestaurant);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "UpdateProductToRestaurant";
-            this.Text = "UpdateProductToRestaurant";
+            this.Name = "UpdateProduct";
+            this.Text = "UpdateProduct";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -132,6 +132,6 @@ namespace Neo4J_Repository.Forms
         private System.Windows.Forms.ComboBox comboBoxRestaurant;
         private System.Windows.Forms.ComboBox comboBoxProduct;
         private System.Windows.Forms.TextBox TxtPrice;
-        private System.Windows.Forms.Button BtnUpdateProductToRestaurant;
+        private System.Windows.Forms.Button BtnUpdateProduct;
     }
 }

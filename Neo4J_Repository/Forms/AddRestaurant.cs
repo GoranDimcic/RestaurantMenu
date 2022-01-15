@@ -21,6 +21,7 @@ namespace Neo4J_Repository.Forms
         {
             restaurant = new Restaurant();
             InitializeComponent();
+            FillList();
         }
 
         private void BtnCreate_Click(object sender, EventArgs e)
@@ -31,6 +32,7 @@ namespace Neo4J_Repository.Forms
                 restaurant.Phone = TxtPhone.Text;
                 restaurant.Address = TxtAddress.Text;
                 restaurant.Products = new List<Product>();
+                restaurant.lists = new List<string>();
 
                 List<Restaurant> restaurants = DataProvider.GetRestaurants();
                 int max = -1;
@@ -42,12 +44,34 @@ namespace Neo4J_Repository.Forms
                 }
                 restaurant.Id = (max + 1).ToString();
 
+                List<String> selected = new List<String>();
+                foreach (String s in checkedListBox1.CheckedItems)
+                {
+                    selected.Add(s);
+                    Product p = DataProvider.GetProduct(s);
+                    restaurant.lists.Add(p.Name);
+
+                    //p.Restaurants.Add(restaurant);
+                    DataProvider.AddRelationProductRestaurant(p, restaurant);
+                    DataProvider.AddRelationRestaurantProduct(restaurant, p);
+                }
+
                 DataProvider.AddRestaurant(restaurant);
 
                 DialogResult = DialogResult.OK;
             }
             else
                 MessageBox.Show("You must fill all fields!");
+        }
+
+        public void FillList()
+        {
+            List<Product> products = DataProvider.GetProducts();
+
+            foreach (Product product in products)
+            {
+                checkedListBox1.Items.Add(product.Name);
+            }
         }
 
         public bool Validation()

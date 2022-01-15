@@ -38,7 +38,7 @@ namespace Neo4J_Repository.Forms
             this.TxtDescription = new System.Windows.Forms.TextBox();
             this.TxtWeight = new System.Windows.Forms.TextBox();
             this.TxtPrice = new System.Windows.Forms.TextBox();
-            this.BtnCreateCustomer = new System.Windows.Forms.Button();
+            this.BtnCreateProduct = new System.Windows.Forms.Button();
             this.comboBoxProductTypes = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
@@ -50,7 +50,7 @@ namespace Neo4J_Repository.Forms
             this.label1.Location = new System.Drawing.Point(25, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(51, 20);
-            this.label1.TabIndex = 1;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Name";
             // 
             // label2
@@ -61,7 +61,7 @@ namespace Neo4J_Repository.Forms
             this.label2.Location = new System.Drawing.Point(25, 70);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(89, 20);
-            this.label2.TabIndex = 2;
+            this.label2.TabIndex = 1;
             this.label2.Text = "Description";
             // 
             // label3
@@ -72,7 +72,7 @@ namespace Neo4J_Repository.Forms
             this.label3.Location = new System.Drawing.Point(25, 115);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 20);
-            this.label3.TabIndex = 3;
+            this.label3.TabIndex = 2;
             this.label3.Text = "Weight";
             // 
             // label4
@@ -83,7 +83,7 @@ namespace Neo4J_Repository.Forms
             this.label4.Location = new System.Drawing.Point(25, 160);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(44, 20);
-            this.label4.TabIndex = 4;
+            this.label4.TabIndex = 3;
             this.label4.Text = "Price";
             // 
             // label6
@@ -94,7 +94,7 @@ namespace Neo4J_Repository.Forms
             this.label6.Location = new System.Drawing.Point(25, 205);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(119, 20);
-            this.label6.TabIndex = 6;
+            this.label6.TabIndex = 4;
             this.label6.Text = "Type of product";
             // 
             // TxtName
@@ -103,7 +103,8 @@ namespace Neo4J_Repository.Forms
             this.TxtName.Location = new System.Drawing.Point(150, 22);
             this.TxtName.Name = "TxtName";
             this.TxtName.Size = new System.Drawing.Size(130, 26);
-            this.TxtName.TabIndex = 7;
+            this.TxtName.TabIndex = 5;
+            this.TxtName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EnterClick_KeyDown);
             // 
             // TxtDescription
             // 
@@ -111,7 +112,8 @@ namespace Neo4J_Repository.Forms
             this.TxtDescription.Location = new System.Drawing.Point(150, 67);
             this.TxtDescription.Name = "TxtDescription";
             this.TxtDescription.Size = new System.Drawing.Size(130, 26);
-            this.TxtDescription.TabIndex = 8;
+            this.TxtDescription.TabIndex = 6;
+            this.TxtDescription.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EnterClick_KeyDown);
             // 
             // TxtWeight
             // 
@@ -119,7 +121,8 @@ namespace Neo4J_Repository.Forms
             this.TxtWeight.Location = new System.Drawing.Point(150, 112);
             this.TxtWeight.Name = "TxtWeight";
             this.TxtWeight.Size = new System.Drawing.Size(130, 26);
-            this.TxtWeight.TabIndex = 9;
+            this.TxtWeight.TabIndex = 7;
+            this.TxtWeight.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EnterClick_KeyDown);
             // 
             // TxtPrice
             // 
@@ -127,17 +130,18 @@ namespace Neo4J_Repository.Forms
             this.TxtPrice.Location = new System.Drawing.Point(150, 157);
             this.TxtPrice.Name = "TxtPrice";
             this.TxtPrice.Size = new System.Drawing.Size(130, 26);
-            this.TxtPrice.TabIndex = 10;
+            this.TxtPrice.TabIndex = 8;
+            this.TxtPrice.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EnterClick_KeyDown);
             // 
-            // BtnCreateCustomer
+            // BtnCreateProduct
             // 
-            this.BtnCreateCustomer.Location = new System.Drawing.Point(165, 250);
-            this.BtnCreateCustomer.Name = "BtnCreateCustomer";
-            this.BtnCreateCustomer.Size = new System.Drawing.Size(100, 40);
-            this.BtnCreateCustomer.TabIndex = 13;
-            this.BtnCreateCustomer.Text = "Create";
-            this.BtnCreateCustomer.UseVisualStyleBackColor = true;
-            this.BtnCreateCustomer.Click += new System.EventHandler(this.BtnCreateProduct_Click);
+            this.BtnCreateProduct.Location = new System.Drawing.Point(150, 250);
+            this.BtnCreateProduct.Name = "BtnCreateProduct";
+            this.BtnCreateProduct.Size = new System.Drawing.Size(130, 40);
+            this.BtnCreateProduct.TabIndex = 10;
+            this.BtnCreateProduct.Text = "Create";
+            this.BtnCreateProduct.UseVisualStyleBackColor = true;
+            this.BtnCreateProduct.Click += new System.EventHandler(this.BtnCreateProduct_Click);
             // 
             // comboBoxProductTypes
             // 
@@ -146,7 +150,7 @@ namespace Neo4J_Repository.Forms
             this.comboBoxProductTypes.Location = new System.Drawing.Point(150, 202);
             this.comboBoxProductTypes.Name = "comboBoxProductTypes";
             this.comboBoxProductTypes.Size = new System.Drawing.Size(130, 28);
-            this.comboBoxProductTypes.TabIndex = 15;
+            this.comboBoxProductTypes.TabIndex = 9;
             // 
             // AddProduct
             // 
@@ -154,7 +158,7 @@ namespace Neo4J_Repository.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 311);
             this.Controls.Add(this.comboBoxProductTypes);
-            this.Controls.Add(this.BtnCreateCustomer);
+            this.Controls.Add(this.BtnCreateProduct);
             this.Controls.Add(this.TxtPrice);
             this.Controls.Add(this.TxtWeight);
             this.Controls.Add(this.TxtDescription);
@@ -182,7 +186,7 @@ namespace Neo4J_Repository.Forms
         private System.Windows.Forms.TextBox TxtDescription;
         private System.Windows.Forms.TextBox TxtWeight;
         private System.Windows.Forms.TextBox TxtPrice;
-        private System.Windows.Forms.Button BtnCreateCustomer;
+        private System.Windows.Forms.Button BtnCreateProduct;
         private System.Windows.Forms.ComboBox comboBoxProductTypes;
     }
 }

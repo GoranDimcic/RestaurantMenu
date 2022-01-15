@@ -11,24 +11,27 @@ using System.Windows.Forms;
 
 namespace Neo4J_Repository.Forms
 {
-    public partial class UpdateProductToRestaurant : Form
+    public partial class UpdateProduct : Form
     {
-        public UpdateProductToRestaurant()
+        public UpdateProduct()
         {
             InitializeComponent();
 
             FillRestaurants();
         }
 
-        private void BtnUpdateProductToRestaurant_Click(object sender, EventArgs e)
+        private void BtnUpdateProduct_Click(object sender, EventArgs e)
         {
 
+
+            DialogResult = DialogResult.OK;
         }
 
         public void FillRestaurants()
         {
             List<Restaurant> restaurants = DataProvider.GetRestaurants();
             List<string> d = new List<string>();
+
             foreach (Restaurant restaurant in restaurants)
             {
                 d.Add(restaurant.Name);
@@ -42,12 +45,18 @@ namespace Neo4J_Repository.Forms
             }
         }
 
+        private void ComboBoxRestaurant_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FillProducts();
+        }
+
         public void FillProducts()
         {
-            Restaurant restaurant = DataProvider.GetRestaurant1(comboBoxRestaurant.SelectedItem.ToString());
+            //Restaurant restaurant = DataProvider.GetRestaurant1(comboBoxRestaurant.SelectedItem.ToString());
 
             List<Product> products = DataProvider.GetProducts();
             List<string> d = new List<string>();
+
             foreach (Product product in products)
             {
                 d.Add(product.Name);
@@ -59,11 +68,6 @@ namespace Neo4J_Repository.Forms
             {
                 comboBoxProduct.Items.Add(s);
             }
-        }
-
-        private void comboBoxRestaurant_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            FillProducts();
         }
     }
 }

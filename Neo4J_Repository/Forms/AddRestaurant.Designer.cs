@@ -36,6 +36,7 @@ namespace Neo4J_Repository.Forms
             this.BtnCreate = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.TxtAddress = new System.Windows.Forms.TextBox();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.SuspendLayout();
             // 
             // label1
@@ -80,7 +81,7 @@ namespace Neo4J_Repository.Forms
             // 
             // BtnCreate
             // 
-            this.BtnCreate.Location = new System.Drawing.Point(142, 183);
+            this.BtnCreate.Location = new System.Drawing.Point(317, 115);
             this.BtnCreate.Name = "BtnCreate";
             this.BtnCreate.Size = new System.Drawing.Size(100, 40);
             this.BtnCreate.TabIndex = 6;
@@ -107,11 +108,21 @@ namespace Neo4J_Repository.Forms
             this.TxtAddress.Size = new System.Drawing.Size(130, 26);
             this.TxtAddress.TabIndex = 13;
             // 
+            // checkedListBox1
+            // 
+            this.checkedListBox1.CheckOnClick = true;
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Location = new System.Drawing.Point(133, 190);
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(120, 94);
+            this.checkedListBox1.TabIndex = 14;
+            // 
             // AddRestaurant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 318);
+            this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.TxtAddress);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.BtnCreate);
@@ -136,5 +147,6 @@ namespace Neo4J_Repository.Forms
         private System.Windows.Forms.Button BtnCreate;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox TxtAddress;
+        private System.Windows.Forms.CheckedListBox checkedListBox1;
     }
 }

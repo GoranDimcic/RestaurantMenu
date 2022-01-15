@@ -31,10 +31,10 @@ namespace Neo4J_Repository.Forms
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductView));
             this.BtnCreateNewProduct = new System.Windows.Forms.Button();
-            this.BtnAddProductToRestaurant = new System.Windows.Forms.Button();
+            this.BtnUpdateProduct = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.BtnAddProductType = new System.Windows.Forms.Button();
+            this.BtnCreateProductType = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -49,16 +49,16 @@ namespace Neo4J_Repository.Forms
             this.BtnCreateNewProduct.UseVisualStyleBackColor = true;
             this.BtnCreateNewProduct.Click += new System.EventHandler(this.BtnCreateNewProduct_Click);
             // 
-            // BtnAddProductToRestaurant
+            // BtnUpdateProduct
             // 
-            this.BtnAddProductToRestaurant.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnAddProductToRestaurant.BackgroundImage")));
-            this.BtnAddProductToRestaurant.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnAddProductToRestaurant.Location = new System.Drawing.Point(450, 100);
-            this.BtnAddProductToRestaurant.Name = "BtnAddProductToRestaurant";
-            this.BtnAddProductToRestaurant.Size = new System.Drawing.Size(150, 150);
-            this.BtnAddProductToRestaurant.TabIndex = 2;
-            this.BtnAddProductToRestaurant.UseVisualStyleBackColor = true;
-            this.BtnAddProductToRestaurant.Click += new System.EventHandler(this.BtnAddProductToRestaurant_Click);
+            this.BtnUpdateProduct.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnUpdateProduct.BackgroundImage")));
+            this.BtnUpdateProduct.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnUpdateProduct.Location = new System.Drawing.Point(450, 100);
+            this.BtnUpdateProduct.Name = "BtnUpdateProduct";
+            this.BtnUpdateProduct.Size = new System.Drawing.Size(150, 150);
+            this.BtnUpdateProduct.TabIndex = 2;
+            this.BtnUpdateProduct.UseVisualStyleBackColor = true;
+            this.BtnUpdateProduct.Click += new System.EventHandler(this.BtnUpdateProduct_Click);
             // 
             // label1
             // 
@@ -80,16 +80,16 @@ namespace Neo4J_Repository.Forms
             this.label2.TabIndex = 3;
             this.label2.Text = "Update product";
             // 
-            // BtnAddProductType
+            // BtnCreateProductType
             // 
-            this.BtnAddProductType.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnAddProductType.BackgroundImage")));
-            this.BtnAddProductType.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnAddProductType.Location = new System.Drawing.Point(50, 100);
-            this.BtnAddProductType.Name = "BtnAddProductType";
-            this.BtnAddProductType.Size = new System.Drawing.Size(150, 150);
-            this.BtnAddProductType.TabIndex = 1;
-            this.BtnAddProductType.UseVisualStyleBackColor = true;
-            this.BtnAddProductType.Click += new System.EventHandler(this.BtnAddProductType_Click);
+            this.BtnCreateProductType.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnCreateProductType.BackgroundImage")));
+            this.BtnCreateProductType.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnCreateProductType.Location = new System.Drawing.Point(50, 100);
+            this.BtnCreateProductType.Name = "BtnCreateProductType";
+            this.BtnCreateProductType.Size = new System.Drawing.Size(150, 150);
+            this.BtnCreateProductType.TabIndex = 1;
+            this.BtnCreateProductType.UseVisualStyleBackColor = true;
+            this.BtnCreateProductType.Click += new System.EventHandler(this.BtnCreateProductType_Click);
             // 
             // label3
             // 
@@ -108,10 +108,10 @@ namespace Neo4J_Repository.Forms
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(684, 411);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.BtnAddProductType);
+            this.Controls.Add(this.BtnCreateProductType);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.BtnAddProductToRestaurant);
+            this.Controls.Add(this.BtnUpdateProduct);
             this.Controls.Add(this.BtnCreateNewProduct);
             this.Name = "ProductView";
             this.Text = "ProductView";
@@ -123,10 +123,10 @@ namespace Neo4J_Repository.Forms
         #endregion
 
         private System.Windows.Forms.Button BtnCreateNewProduct;
-        private System.Windows.Forms.Button BtnAddProductToRestaurant;
+        private System.Windows.Forms.Button BtnUpdateProduct;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button BtnAddProductType;
+        private System.Windows.Forms.Button BtnCreateProductType;
         private System.Windows.Forms.Label label3;
     }
 }

@@ -31,7 +31,7 @@ namespace Neo4J_Repository.Forms
         {
             this.label1 = new System.Windows.Forms.Label();
             this.TxtName = new System.Windows.Forms.TextBox();
-            this.BtnCreateProduct = new System.Windows.Forms.Button();
+            this.BtnCreateProductType = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -52,23 +52,24 @@ namespace Neo4J_Repository.Forms
             this.TxtName.Name = "TxtName";
             this.TxtName.Size = new System.Drawing.Size(130, 26);
             this.TxtName.TabIndex = 3;
+            this.TxtName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EnterClick_KeyDown);
             // 
-            // BtnCreateProduct
+            // BtnCreateProductType
             // 
-            this.BtnCreateProduct.Location = new System.Drawing.Point(144, 105);
-            this.BtnCreateProduct.Name = "BtnCreateProduct";
-            this.BtnCreateProduct.Size = new System.Drawing.Size(100, 40);
-            this.BtnCreateProduct.TabIndex = 14;
-            this.BtnCreateProduct.Text = "Create";
-            this.BtnCreateProduct.UseVisualStyleBackColor = true;
-            this.BtnCreateProduct.Click += new System.EventHandler(this.BtnCreateProduct_Click);
+            this.BtnCreateProductType.Location = new System.Drawing.Point(130, 110);
+            this.BtnCreateProductType.Name = "BtnCreateProductType";
+            this.BtnCreateProductType.Size = new System.Drawing.Size(130, 40);
+            this.BtnCreateProductType.TabIndex = 14;
+            this.BtnCreateProductType.Text = "Create";
+            this.BtnCreateProductType.UseVisualStyleBackColor = true;
+            this.BtnCreateProductType.Click += new System.EventHandler(this.BtnCreateProductType_Click);
             // 
             // AddProductType
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 261);
-            this.Controls.Add(this.BtnCreateProduct);
+            this.ClientSize = new System.Drawing.Size(384, 211);
+            this.Controls.Add(this.BtnCreateProductType);
             this.Controls.Add(this.TxtName);
             this.Controls.Add(this.label1);
             this.Name = "AddProductType";
@@ -82,6 +83,6 @@ namespace Neo4J_Repository.Forms
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox TxtName;
-        private System.Windows.Forms.Button BtnCreateProduct;
+        private System.Windows.Forms.Button BtnCreateProductType;
     }
 }
