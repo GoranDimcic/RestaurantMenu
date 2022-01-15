@@ -12,7 +12,7 @@ namespace Neo4J_Repository.Domain
 
         public string Name { get; set; }
 
-        public string CreditCard { get; set; }
+        public float CreditCard { get; set; }
 
         public List<Bill> Bills { get; set; }
     }

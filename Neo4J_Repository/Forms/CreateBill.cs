@@ -38,5 +38,16 @@ namespace Neo4J_Repository.Forms
                 listBoxProducts.Items.Add(product);
             }
         }
+
+        private void BtnCreateBill_Click(object sender, EventArgs e)
+        {
+            float iznos = createdBill.TotalPrice;
+            customer.CreditCard -= iznos;
+            restaurant.BillLists.Remove(createdBill.Id);
+
+            MessageBox.Show("Trenutno = " + customer.CreditCard);
+
+            DialogResult = DialogResult.OK;
+        }
     }
 }

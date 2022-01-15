@@ -76,17 +76,15 @@ namespace Neo4J_Repository
 
         #region Update
 
-        internal static Product UpdateProduct(Product product)
+        internal static Product UpdateProduct(string name, float price)
         {
-            Dictionary<string, object> queryDict = new Dictionary<string, object>
-            {
-                { "Name", product.Name }
-            };
-            var query = new Neo4jClient.Cypher.CypherQuery("start n=node(*)where(n:Product)and exists(n.Name) and n.Name=~ '" + product.Name +
-                "'return n", queryDict, Neo4jClient.Cypher.CypherResultMode.Set);
-            List<Product> products = ((IRawGraphClient)client).ExecuteGetCypherResults<Product>(query).ToList();
-            Product prod = products.Find(x => x.Name == product.Name);
-            return prod;
+            ConnectToTheBase();
+            return client.Cypher.Match("(p:Product)")
+                .Where("p.Name={name}").
+                Set("p.Price = {price}").
+                WithParam("name", name).
+                WithParam("price",price).
+                Return(p => p.As<Product>()).Results.FirstOrDefault();
         }
 
         #endregion
@@ -238,6 +236,8 @@ namespace Neo4J_Repository
                 Return(s => s.As<Restaurant>()).Results.FirstOrDefault();
         }
 
+
+
         public static List<Restaurant> GetRestaurant(string restaurant)
         {
             ConnectToTheBase();
@@ -287,17 +287,6 @@ namespace Neo4J_Repository
                      .Results.ToList();
             return products;
         }
-
-        //public static List<Product> GetProducts(string restaurant)
-        //{
-        //    ConnectToTheBase();
-        //    List<Product> prod =
-        //      client.Cypher.Match("(a:Restaurant)")
-        //        .Where("a.Name={restaurant}").
-        //        WithParam("restaurant", restaurant).
-        //        Return(a => a.As<Product>()).Results.ToList();
-        //    return prod;
-        //}
 
         public static List<ProductType> GetProductType()
         {

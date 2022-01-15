@@ -17,37 +17,21 @@ namespace Neo4J_Repository.Forms
         {
             InitializeComponent();
 
-            FillRestaurants();
+            FillProducts();
         }
 
         private void BtnUpdateProduct_Click(object sender, EventArgs e)
         {
+            Product product = DataProvider.GetProduct(comboBoxProduct.SelectedItem.ToString());
+            string s1 = product.Name;
+            float price = float.Parse(TxtPrice.Text);
 
+            DataProvider.UpdateProduct(s1, price);
+
+            MessageBox.Show("Name " + s1);
+            MessageBox.Show("Nova cena = " + price);
 
             DialogResult = DialogResult.OK;
-        }
-
-        public void FillRestaurants()
-        {
-            List<Restaurant> restaurants = DataProvider.GetRestaurants();
-            List<string> d = new List<string>();
-
-            foreach (Restaurant restaurant in restaurants)
-            {
-                d.Add(restaurant.Name);
-            }
-
-            List<string> filter = d.Distinct().ToList();
-
-            foreach (string s in filter)
-            {
-                comboBoxRestaurant.Items.Add(s);
-            }
-        }
-
-        private void ComboBoxRestaurant_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            FillProducts();
         }
 
         public void FillProducts()

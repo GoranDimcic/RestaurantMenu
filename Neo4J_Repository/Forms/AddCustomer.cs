@@ -28,7 +28,7 @@ namespace Neo4J_Repository.Forms
             if (Validation())
             {
                 customer.Name = TxtName.Text;
-                customer.CreditCard = TxtCreditCard.Text;
+                customer.CreditCard = float.Parse(TxtCreditCard.Text);
                 customer.Bills = new List<Bill>();
 
                 List<Customer> customers = DataProvider.GetCustomers();

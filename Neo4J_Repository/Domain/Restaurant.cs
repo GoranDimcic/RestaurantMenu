@@ -22,6 +22,11 @@ namespace Neo4J_Repository.Domain
 
         public List<String> ProductLists { get; set; }
 
-        public Dictionary<object, int> kolicina;
+        public List<String> BillLists { get; set; }
+
+        public Restaurant()
+        {
+            BillLists = new List<String>();
+        }
     }
 }

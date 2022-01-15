@@ -58,6 +58,7 @@ namespace Neo4J_Repository.Forms
 
         private void BtnCreateOrder_Click(object sender, EventArgs e)
         {
+
             Restaurant = DataProvider.GetRestaurant1(comboBoxRestaurants.SelectedItem.ToString());
             bill.Date = DateTime.Now;
             foreach (String s in checkedListBoxProducts.CheckedItems)
@@ -80,6 +81,7 @@ namespace Neo4J_Repository.Forms
             bill.NumberBill = (max + 1).ToString();
 
             DataProvider.AddBill(bill);
+            Restaurant.BillLists.Add(bill.Id);
 
             DataProvider.AddRelationRestaurantBill(Restaurant, bill);
             DataProvider.AddRelationBillRestaurant(bill, Restaurant);

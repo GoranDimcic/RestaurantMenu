@@ -116,12 +116,13 @@ namespace Neo4J_Repository.Forms
             // 
             // BtnCreateBill
             // 
-            this.BtnCreateBill.Location = new System.Drawing.Point(150, 447);
+            this.BtnCreateBill.Location = new System.Drawing.Point(200, 447);
             this.BtnCreateBill.Name = "BtnCreateBill";
-            this.BtnCreateBill.Size = new System.Drawing.Size(200, 39);
+            this.BtnCreateBill.Size = new System.Drawing.Size(100, 39);
             this.BtnCreateBill.TabIndex = 6;
-            this.BtnCreateBill.Text = "Create bill";
+            this.BtnCreateBill.Text = "Pay";
             this.BtnCreateBill.UseVisualStyleBackColor = true;
+            this.BtnCreateBill.Click += new System.EventHandler(this.BtnCreateBill_Click);
             // 
             // label3
             // 
@@ -192,7 +193,7 @@ namespace Neo4J_Repository.Forms
             this.Controls.Add(this.TxtDate);
             this.Controls.Add(this.label1);
             this.Name = "CreateBill";
-            this.Text = "CreateBill";
+            this.Text = "Bill";
             this.ResumeLayout(false);
             this.PerformLayout();
 

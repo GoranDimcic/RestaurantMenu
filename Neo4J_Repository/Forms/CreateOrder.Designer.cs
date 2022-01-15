@@ -72,7 +72,7 @@ namespace Neo4J_Repository.Forms
             this.BtnCreateOrder.Name = "BtnCreateOrder";
             this.BtnCreateOrder.Size = new System.Drawing.Size(170, 39);
             this.BtnCreateOrder.TabIndex = 3;
-            this.BtnCreateOrder.Text = "Create order";
+            this.BtnCreateOrder.Text = "Create bill";
             this.BtnCreateOrder.UseVisualStyleBackColor = true;
             this.BtnCreateOrder.Click += new System.EventHandler(this.BtnCreateOrder_Click);
             // 

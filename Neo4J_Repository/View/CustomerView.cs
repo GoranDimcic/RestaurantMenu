@@ -23,10 +23,5 @@ namespace Neo4J_Repository.View
             AddCustomer form = new AddCustomer();
             form.ShowDialog();
         }
-
-        private void BtnPayTheBill_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
