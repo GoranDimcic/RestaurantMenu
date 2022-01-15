@@ -62,7 +62,6 @@ namespace Neo4J_Repository.Forms
             this.TxtDate.ReadOnly = true;
             this.TxtDate.Size = new System.Drawing.Size(200, 26);
             this.TxtDate.TabIndex = 1;
-            this.TxtDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // TxtRestaurant
             // 
@@ -72,7 +71,6 @@ namespace Neo4J_Repository.Forms
             this.TxtRestaurant.ReadOnly = true;
             this.TxtRestaurant.Size = new System.Drawing.Size(200, 26);
             this.TxtRestaurant.TabIndex = 2;
-            this.TxtRestaurant.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // listBoxProducts
             // 
@@ -92,7 +90,6 @@ namespace Neo4J_Repository.Forms
             this.TxtTotalPrice.ReadOnly = true;
             this.TxtTotalPrice.Size = new System.Drawing.Size(200, 26);
             this.TxtTotalPrice.TabIndex = 4;
-            this.TxtTotalPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label2
             // 
@@ -112,7 +109,6 @@ namespace Neo4J_Repository.Forms
             this.TxtCustomerName.ReadOnly = true;
             this.TxtCustomerName.Size = new System.Drawing.Size(200, 26);
             this.TxtCustomerName.TabIndex = 5;
-            this.TxtCustomerName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // BtnCreateBill
             // 

@@ -22,10 +22,10 @@ namespace Neo4J_Repository.Forms
             InitializeComponent();
             product = new Product();
 
-            FillProducts();
+            FillTypeProducts();
         }
 
-        public void FillProducts()
+        public void FillTypeProducts()
         {
             List<ProductType> products = DataProvider.GetProductTypes();
             List<string> d = new List<string>();
@@ -62,16 +62,16 @@ namespace Neo4J_Repository.Forms
                 product.Id = (max + 1).ToString();
                 DataProvider.AddProduct(product);
 
-                String type = comboBoxProductTypes.Text;
-                ProductType type1 = DataProvider.GetProductType1(type);
+                String pt = comboBoxProductTypes.Text;
+                ProductType productType = DataProvider.GetOneProductType(pt);
 
-                type1.Products = new List<Product>
+                productType.Products = new List<Product>
                 {
                     product
                 };
 
-                DataProvider.AddRelationProductProductType(product, type1);
-                DataProvider.AddRelationProductTypeProduct(type1, product);
+                DataProvider.AddRelationProductProductType(product, productType);
+                DataProvider.AddRelationProductTypeProduct(productType, product);
 
                 DialogResult = DialogResult.OK;
             }
@@ -94,6 +94,19 @@ namespace Neo4J_Repository.Forms
         {
             if (e.KeyCode == Keys.Enter)
                 BtnCreateProduct.PerformClick();
+        }
+
+        private void NumberOnly_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

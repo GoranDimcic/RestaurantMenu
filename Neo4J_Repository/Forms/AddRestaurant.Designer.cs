@@ -65,7 +65,7 @@ namespace Neo4J_Repository.Forms
             this.TxtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtName.Location = new System.Drawing.Point(130, 22);
             this.TxtName.Name = "TxtName";
-            this.TxtName.Size = new System.Drawing.Size(170, 26);
+            this.TxtName.Size = new System.Drawing.Size(150, 26);
             this.TxtName.TabIndex = 3;
             this.TxtName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtEnter_KeyDown);
             // 
@@ -74,15 +74,16 @@ namespace Neo4J_Repository.Forms
             this.TxtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtPhone.Location = new System.Drawing.Point(130, 77);
             this.TxtPhone.Name = "TxtPhone";
-            this.TxtPhone.Size = new System.Drawing.Size(170, 26);
+            this.TxtPhone.Size = new System.Drawing.Size(150, 26);
             this.TxtPhone.TabIndex = 5;
             this.TxtPhone.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtEnter_KeyDown);
+            this.TxtPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumberOnly_KeyPress);
             // 
             // BtnCreateRestaurant
             // 
             this.BtnCreateRestaurant.Location = new System.Drawing.Point(130, 182);
             this.BtnCreateRestaurant.Name = "BtnCreateRestaurant";
-            this.BtnCreateRestaurant.Size = new System.Drawing.Size(170, 40);
+            this.BtnCreateRestaurant.Size = new System.Drawing.Size(150, 40);
             this.BtnCreateRestaurant.TabIndex = 6;
             this.BtnCreateRestaurant.Text = "Create restaurant";
             this.BtnCreateRestaurant.UseVisualStyleBackColor = true;
@@ -104,14 +105,14 @@ namespace Neo4J_Repository.Forms
             this.TxtAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtAddress.Location = new System.Drawing.Point(130, 132);
             this.TxtAddress.Name = "TxtAddress";
-            this.TxtAddress.Size = new System.Drawing.Size(170, 26);
+            this.TxtAddress.Size = new System.Drawing.Size(150, 26);
             this.TxtAddress.TabIndex = 13;
             // 
             // AddRestaurant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 361);
+            this.ClientSize = new System.Drawing.Size(384, 261);
             this.Controls.Add(this.TxtAddress);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.BtnCreateRestaurant);

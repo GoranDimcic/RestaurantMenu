@@ -20,8 +20,6 @@ namespace Neo4J_Repository.Domain
 
         public ProductType ProductType { get; set; }
 
-        public string RestaurantName { get; set; }
-
         public Restaurant Restaurant { get; set; }
     }
 }

@@ -26,6 +26,7 @@ namespace Neo4J_Repository.Forms
         {
             List<Restaurant> restaurants = DataProvider.GetRestaurants();
             List<string> d = new List<string>();
+
             foreach (Restaurant restaurant in restaurants)
             {
                 d.Add(restaurant.Name);
@@ -39,26 +40,6 @@ namespace Neo4J_Repository.Forms
             }
         }
 
-        private void BtnAddProduct_Click(object sender, EventArgs e)
-        {
-            restaurant = DataProvider.GetRestaurant1(comboBoxRestaurant.SelectedItem.ToString());
-
-            List<String> selected = new List<String>();
-            foreach (String s in checkedListBoxProducts.CheckedItems)
-            {
-                selected.Add(s);
-                Product p = DataProvider.GetProduct(s);
-                string sr = p.Name;
-                restaurant.ProductLists.Add(sr);
-                restaurant.Products.Add(p);
-
-                DataProvider.AddRelationProductRestaurant(p, restaurant);
-                DataProvider.AddRelationRestaurantProduct(restaurant, p);
-
-                DialogResult = DialogResult.OK;
-            }
-        }
-
         public void FillProducts()
         {
             List<Product> products = DataProvider.GetProducts();
@@ -66,6 +47,24 @@ namespace Neo4J_Repository.Forms
             foreach (Product product in products)
             {
                 checkedListBoxProducts.Items.Add(product.Name);
+            }
+        }
+
+        private void BtnAddProduct_Click(object sender, EventArgs e)
+        {
+            restaurant = DataProvider.GetOneRestaurant(comboBoxRestaurant.SelectedItem.ToString());
+
+            foreach (String s in checkedListBoxProducts.CheckedItems)
+            {
+                Product product = DataProvider.GetProduct(s);
+                string str = product.Name;
+                restaurant.ProductLists.Add(str);
+                restaurant.Products.Add(product);
+
+                DataProvider.AddRelationProductRestaurant(product, restaurant);
+                DataProvider.AddRelationRestaurantProduct(restaurant, product);
+
+                DialogResult = DialogResult.OK;
             }
         }
     }

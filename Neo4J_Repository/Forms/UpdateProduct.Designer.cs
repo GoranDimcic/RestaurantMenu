@@ -72,6 +72,7 @@ namespace Neo4J_Repository.Forms
             this.TxtPrice.Name = "TxtPrice";
             this.TxtPrice.Size = new System.Drawing.Size(130, 26);
             this.TxtPrice.TabIndex = 5;
+            this.TxtPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumberOnly_KeyPress);
             // 
             // BtnUpdateProduct
             // 
@@ -87,7 +88,7 @@ namespace Neo4J_Repository.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 246);
+            this.ClientSize = new System.Drawing.Size(384, 211);
             this.Controls.Add(this.BtnUpdateProduct);
             this.Controls.Add(this.TxtPrice);
             this.Controls.Add(this.comboBoxProduct);

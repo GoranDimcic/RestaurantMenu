@@ -42,9 +42,14 @@ namespace Neo4J_Repository.Forms
             }
         }
 
-        public void Fill()
+        private void ComboBoxRestaurants_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Restaurant = DataProvider.GetRestaurant1(comboBoxRestaurants.SelectedItem.ToString());
+            FillListProducts();
+        }
+
+        public void FillListProducts()
+        {
+            Restaurant = DataProvider.GetOneRestaurant(comboBoxRestaurants.SelectedItem.ToString());
 
             List<string> products = new List<string>();
             products = Restaurant.ProductLists;
@@ -58,17 +63,17 @@ namespace Neo4J_Repository.Forms
 
         private void BtnCreateOrder_Click(object sender, EventArgs e)
         {
+            Restaurant = DataProvider.GetOneRestaurant(comboBoxRestaurants.SelectedItem.ToString());
 
-            Restaurant = DataProvider.GetRestaurant1(comboBoxRestaurants.SelectedItem.ToString());
             bill.Date = DateTime.Now;
             foreach (String s in checkedListBoxProducts.CheckedItems)
             {
                 bill.Products.Add(s);
                 Product p = DataProvider.GetProduct(s);
                 float price = p.Price;
-
                 bill.TotalPrice += price;
             }
+
             List<Bill> bills = DataProvider.GetBills();
             int max = -1;
 
@@ -77,6 +82,7 @@ namespace Neo4J_Repository.Forms
                 if (int.Parse(bill.Id) > max)
                     max = int.Parse(bill.Id);
             }
+
             bill.Id = (max + 1).ToString();
             bill.NumberBill = (max + 1).ToString();
 
@@ -91,21 +97,16 @@ namespace Neo4J_Repository.Forms
 
             foreach (String s in checkedListBoxProducts.CheckedItems)
             {
-                Product p = DataProvider.GetProduct(s);
+                Product product = DataProvider.GetProduct(s);
 
-                DataProvider.AddRelationBillProduct(bill, p);
-                DataProvider.AddRelationProductBill(p, bill);
+                DataProvider.AddRelationBillProduct(bill, product);
+                DataProvider.AddRelationProductBill(product, bill);
             }
 
             CreateBill form = new CreateBill(bill, Restaurant, Customer);
             form.ShowDialog();
 
             DialogResult = DialogResult.OK;
-        }
-
-        private void ComboBoxRestaurants_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Fill();
         }
     }
 }

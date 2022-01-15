@@ -61,7 +61,7 @@ namespace Neo4J_Repository.Forms
             // TxtName
             // 
             this.TxtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtName.Location = new System.Drawing.Point(140, 22);
+            this.TxtName.Location = new System.Drawing.Point(150, 22);
             this.TxtName.Name = "TxtName";
             this.TxtName.Size = new System.Drawing.Size(130, 26);
             this.TxtName.TabIndex = 2;
@@ -70,15 +70,16 @@ namespace Neo4J_Repository.Forms
             // TxtCreditCard
             // 
             this.TxtCreditCard.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtCreditCard.Location = new System.Drawing.Point(140, 77);
+            this.TxtCreditCard.Location = new System.Drawing.Point(150, 77);
             this.TxtCreditCard.Name = "TxtCreditCard";
             this.TxtCreditCard.Size = new System.Drawing.Size(130, 26);
             this.TxtCreditCard.TabIndex = 3;
             this.TxtCreditCard.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EnterClick_KeyDown);
+            this.TxtCreditCard.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumberOnly_KeyPress);
             // 
             // BtnCreateCustomer
             // 
-            this.BtnCreateCustomer.Location = new System.Drawing.Point(140, 123);
+            this.BtnCreateCustomer.Location = new System.Drawing.Point(150, 125);
             this.BtnCreateCustomer.Name = "BtnCreateCustomer";
             this.BtnCreateCustomer.Size = new System.Drawing.Size(130, 40);
             this.BtnCreateCustomer.TabIndex = 14;
@@ -90,7 +91,7 @@ namespace Neo4J_Repository.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(334, 211);
+            this.ClientSize = new System.Drawing.Size(384, 211);
             this.Controls.Add(this.BtnCreateCustomer);
             this.Controls.Add(this.TxtCreditCard);
             this.Controls.Add(this.TxtName);

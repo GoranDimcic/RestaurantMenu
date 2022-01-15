@@ -33,7 +33,7 @@ namespace Neo4J_Repository.Forms
             TxtTotalPrice.Text = createdBill.TotalPrice.ToString();
             TxtCustomerName.Text = customer.Name;
 
-            foreach(string product in restaurant.ProductLists)
+            foreach (string product in restaurant.ProductLists)
             {
                 listBoxProducts.Items.Add(product);
             }
@@ -41,11 +41,11 @@ namespace Neo4J_Repository.Forms
 
         private void BtnCreateBill_Click(object sender, EventArgs e)
         {
-            float iznos = createdBill.TotalPrice;
-            customer.CreditCard -= iznos;
+            float bill = createdBill.TotalPrice;
+            customer.CreditCard -= bill;
             restaurant.BillLists.Remove(createdBill.Id);
 
-            MessageBox.Show("Trenutno = " + customer.CreditCard);
+            MessageBox.Show("Money left of the credit card = " + customer.CreditCard);
 
             DialogResult = DialogResult.OK;
         }
