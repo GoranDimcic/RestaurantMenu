@@ -76,9 +76,9 @@ namespace Neo4J_Repository.Forms
             // 
             // BtnUpdateProduct
             // 
-            this.BtnUpdateProduct.Location = new System.Drawing.Point(165, 130);
+            this.BtnUpdateProduct.Location = new System.Drawing.Point(150, 130);
             this.BtnUpdateProduct.Name = "BtnUpdateProduct";
-            this.BtnUpdateProduct.Size = new System.Drawing.Size(100, 40);
+            this.BtnUpdateProduct.Size = new System.Drawing.Size(130, 40);
             this.BtnUpdateProduct.TabIndex = 6;
             this.BtnUpdateProduct.Text = "Update product";
             this.BtnUpdateProduct.UseVisualStyleBackColor = true;

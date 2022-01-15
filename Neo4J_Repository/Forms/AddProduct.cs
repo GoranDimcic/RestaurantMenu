@@ -76,9 +76,7 @@ namespace Neo4J_Repository.Forms
                 DialogResult = DialogResult.OK;
             }
             else
-            {
                 MessageBox.Show("You must fill all fields!");
-            }
         }
 
         public bool Validation()
