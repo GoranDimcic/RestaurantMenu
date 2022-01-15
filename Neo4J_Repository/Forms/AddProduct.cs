@@ -65,8 +65,10 @@ namespace Neo4J_Repository.Forms
                 String type = comboBoxProductTypes.Text;
                 ProductType type1 = DataProvider.GetProductType1(type);
 
-                type1.Products = new List<Product>();
-                type1.Products.Add(product);
+                type1.Products = new List<Product>
+                {
+                    product
+                };
 
                 DataProvider.AddRelationProductProductType(product, type1);
                 DataProvider.AddRelationProductTypeProduct(type1, product);

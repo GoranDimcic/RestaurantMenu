@@ -60,7 +60,7 @@ namespace Neo4J_Repository.Forms
             this.BtnCreateProductType.Name = "BtnCreateProductType";
             this.BtnCreateProductType.Size = new System.Drawing.Size(130, 40);
             this.BtnCreateProductType.TabIndex = 14;
-            this.BtnCreateProductType.Text = "Create";
+            this.BtnCreateProductType.Text = "Create product type";
             this.BtnCreateProductType.UseVisualStyleBackColor = true;
             this.BtnCreateProductType.Click += new System.EventHandler(this.BtnCreateProductType_Click);
             // 

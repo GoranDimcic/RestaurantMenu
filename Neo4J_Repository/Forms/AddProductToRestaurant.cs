@@ -22,22 +22,6 @@ namespace Neo4J_Repository.Forms
             FillProducts();
         }
 
-        private void BtnAdd_Click(object sender, EventArgs e)
-        {
-            restaurant = DataProvider.GetRestaurant1(comboBox2.SelectedItem.ToString());
-
-            List<String> selected = new List<String>();
-            foreach (String s in checkedListBox1.CheckedItems)
-            {
-                selected.Add(s);
-                Product p = DataProvider.GetProduct(s);
-                restaurant.Products.Add(p);
-                //p.Restaurants.Add(restaurant);
-                DataProvider.AddRelationProductRestaurant(p, restaurant);
-                DataProvider.AddRelationRestaurantProduct(restaurant, p);
-            }
-        }
-
         public void FillRestaurants()
         {
             List<Restaurant> restaurants = DataProvider.GetRestaurants();
@@ -51,7 +35,25 @@ namespace Neo4J_Repository.Forms
 
             foreach (string s in filter)
             {
-                comboBox2.Items.Add(s);
+                comboBoxRestaurant.Items.Add(s);
+            }
+        }
+
+        private void BtnAddProduct_Click(object sender, EventArgs e)
+        {
+            restaurant = DataProvider.GetRestaurant1(comboBoxRestaurant.SelectedItem.ToString());
+
+            List<String> selected = new List<String>();
+            foreach (String s in checkedListBoxProducts.CheckedItems)
+            {
+                selected.Add(s);
+                Product p = DataProvider.GetProduct(s);
+                restaurant.Products.Add(p);
+
+                DataProvider.AddRelationProductRestaurant(p, restaurant);
+                DataProvider.AddRelationRestaurantProduct(restaurant, p);
+
+                DialogResult = DialogResult.OK;
             }
         }
 
@@ -61,7 +63,7 @@ namespace Neo4J_Repository.Forms
 
             foreach (Product product in products)
             {
-                checkedListBox1.Items.Add(product.Name);
+                checkedListBoxProducts.Items.Add(product.Name);
             }
         }
     }

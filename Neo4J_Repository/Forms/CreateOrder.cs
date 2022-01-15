@@ -20,10 +20,10 @@ namespace Neo4J_Repository.Forms
             Customer = customer;
             Restaurant = new Restaurant();
             InitializeComponent();
-            FillComboBox();
+            FillRestaurants();
         }
 
-        public void FillComboBox()
+        public void FillRestaurants()
         {
             List<Restaurant> restaurants = DataProvider.GetRestaurants();
             List<string> d = new List<string>();
@@ -36,13 +36,13 @@ namespace Neo4J_Repository.Forms
 
             foreach (string s in filter)
             {
-                comboBox1.Items.Add(s);
+                comboBoxRestaurants.Items.Add(s);
             }
         }
 
         public void Fill()
         {
-            Restaurant = DataProvider.GetRestaurant1(comboBox1.SelectedItem.ToString());
+            Restaurant = DataProvider.GetRestaurant1(comboBoxRestaurants.SelectedItem.ToString());
 
             List<Product> proiyvodi = new List<Product>();
             proiyvodi = Restaurant.Products;
@@ -56,13 +56,12 @@ namespace Neo4J_Repository.Forms
 
             foreach (Product product in products)
             {
-                checkedListBox1.Items.Add(product.Name);
+                checkedListBoxProducts.Items.Add(product.Name);
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void BtnCreateOrder_Click(object sender, EventArgs e)
         {
-            Fill();
         }
     }
 }

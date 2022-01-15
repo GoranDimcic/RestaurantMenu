@@ -29,22 +29,22 @@ namespace Neo4J_Repository.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.checkedListBoxProducts = new System.Windows.Forms.CheckedListBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.BtnAdd = new System.Windows.Forms.Button();
+            this.BtnAddProduct = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBoxRestaurant = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
-            // checkedListBox1
+            // checkedListBoxProducts
             // 
-            this.checkedListBox1.CheckOnClick = true;
-            this.checkedListBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(150, 80);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(130, 94);
-            this.checkedListBox1.TabIndex = 12;
+            this.checkedListBoxProducts.CheckOnClick = true;
+            this.checkedListBoxProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkedListBoxProducts.FormattingEnabled = true;
+            this.checkedListBoxProducts.Location = new System.Drawing.Point(150, 80);
+            this.checkedListBoxProducts.Name = "checkedListBoxProducts";
+            this.checkedListBoxProducts.Size = new System.Drawing.Size(170, 130);
+            this.checkedListBoxProducts.TabIndex = 12;
             // 
             // label4
             // 
@@ -57,15 +57,15 @@ namespace Neo4J_Repository.Forms
             this.label4.TabIndex = 11;
             this.label4.Text = "Product";
             // 
-            // BtnAdd
+            // BtnAddProduct
             // 
-            this.BtnAdd.Location = new System.Drawing.Point(167, 190);
-            this.BtnAdd.Name = "BtnAdd";
-            this.BtnAdd.Size = new System.Drawing.Size(100, 40);
-            this.BtnAdd.TabIndex = 13;
-            this.BtnAdd.Text = "Add";
-            this.BtnAdd.UseVisualStyleBackColor = true;
-            this.BtnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
+            this.BtnAddProduct.Location = new System.Drawing.Point(150, 234);
+            this.BtnAddProduct.Name = "BtnAddProduct";
+            this.BtnAddProduct.Size = new System.Drawing.Size(170, 40);
+            this.BtnAddProduct.TabIndex = 13;
+            this.BtnAddProduct.Text = "Add product to restaurant";
+            this.BtnAddProduct.UseVisualStyleBackColor = true;
+            this.BtnAddProduct.Click += new System.EventHandler(this.BtnAddProduct_Click);
             // 
             // label1
             // 
@@ -78,24 +78,24 @@ namespace Neo4J_Repository.Forms
             this.label1.TabIndex = 14;
             this.label1.Text = "Restaurant";
             // 
-            // comboBox2
+            // comboBoxRestaurant
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(150, 22);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(130, 28);
-            this.comboBox2.TabIndex = 16;
+            this.comboBoxRestaurant.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxRestaurant.FormattingEnabled = true;
+            this.comboBoxRestaurant.Location = new System.Drawing.Point(150, 22);
+            this.comboBoxRestaurant.Name = "comboBoxRestaurant";
+            this.comboBoxRestaurant.Size = new System.Drawing.Size(170, 28);
+            this.comboBoxRestaurant.TabIndex = 16;
             // 
             // AddProductToRestaurant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(434, 286);
-            this.Controls.Add(this.comboBox2);
+            this.ClientSize = new System.Drawing.Size(434, 311);
+            this.Controls.Add(this.comboBoxRestaurant);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.BtnAdd);
-            this.Controls.Add(this.checkedListBox1);
+            this.Controls.Add(this.BtnAddProduct);
+            this.Controls.Add(this.checkedListBoxProducts);
             this.Controls.Add(this.label4);
             this.Name = "AddProductToRestaurant";
             this.Text = "AddProductToRestaurant";
@@ -106,10 +106,10 @@ namespace Neo4J_Repository.Forms
 
         #endregion
 
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.CheckedListBox checkedListBoxProducts;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button BtnAdd;
+        private System.Windows.Forms.Button BtnAddProduct;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBoxRestaurant;
     }
 }

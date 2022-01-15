@@ -24,7 +24,7 @@ namespace Neo4J_Repository.Forms
             FillList();
         }
 
-        private void BtnCreate_Click(object sender, EventArgs e)
+        private void BtnCreateRestaurant_Click(object sender, EventArgs e)
         {
             if (this.Validation())
             {
@@ -32,7 +32,7 @@ namespace Neo4J_Repository.Forms
                 restaurant.Phone = TxtPhone.Text;
                 restaurant.Address = TxtAddress.Text;
                 restaurant.Products = new List<Product>();
-                restaurant.lists = new List<string>();
+                restaurant.ProductLists = new List<string>();
 
                 List<Restaurant> restaurants = DataProvider.GetRestaurants();
                 int max = -1;
@@ -45,13 +45,12 @@ namespace Neo4J_Repository.Forms
                 restaurant.Id = (max + 1).ToString();
 
                 List<String> selected = new List<String>();
-                foreach (String s in checkedListBox1.CheckedItems)
+                foreach (String s in checkedListBoxProducts.CheckedItems)
                 {
                     selected.Add(s);
                     Product p = DataProvider.GetProduct(s);
-                    restaurant.lists.Add(p.Name);
+                    restaurant.ProductLists.Add(p.Name);
 
-                    //p.Restaurants.Add(restaurant);
                     DataProvider.AddRelationProductRestaurant(p, restaurant);
                     DataProvider.AddRelationRestaurantProduct(restaurant, p);
                 }
@@ -70,7 +69,7 @@ namespace Neo4J_Repository.Forms
 
             foreach (Product product in products)
             {
-                checkedListBox1.Items.Add(product.Name);
+                checkedListBoxProducts.Items.Add(product.Name);
             }
         }
 
@@ -84,7 +83,7 @@ namespace Neo4J_Repository.Forms
         private void TxtEnter_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
-                BtnCreate.PerformClick();
+                BtnCreateRestaurant.PerformClick();
         }
     }
 }

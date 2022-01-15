@@ -101,7 +101,7 @@ namespace Neo4J_Repository.Forms
             this.BtnUpdateProduct.Name = "BtnUpdateProduct";
             this.BtnUpdateProduct.Size = new System.Drawing.Size(100, 40);
             this.BtnUpdateProduct.TabIndex = 6;
-            this.BtnUpdateProduct.Text = "Update";
+            this.BtnUpdateProduct.Text = "Update product";
             this.BtnUpdateProduct.UseVisualStyleBackColor = true;
             this.BtnUpdateProduct.Click += new System.EventHandler(this.BtnUpdateProduct_Click);
             // 

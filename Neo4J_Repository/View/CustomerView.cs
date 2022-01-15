@@ -24,7 +24,7 @@ namespace Neo4J_Repository.View
             form.ShowDialog();
         }
 
-        private void BtnAddOrder_Click(object sender, EventArgs e)
+        private void BtnPayTheBill_Click(object sender, EventArgs e)
         {
 
         }

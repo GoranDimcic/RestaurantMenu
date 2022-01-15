@@ -20,7 +20,7 @@ namespace Neo4J_Repository.Domain
 
         public List<Bill> Bills { get; set; }
 
-        public List<String> lists { get; set; }
+        public List<String> ProductLists { get; set; }
 
         public Dictionary<object, int> kolicina;
     }

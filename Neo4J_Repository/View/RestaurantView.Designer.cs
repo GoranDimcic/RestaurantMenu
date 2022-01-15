@@ -31,7 +31,7 @@ namespace Neo4J_Repository.View
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RestaurantView));
             this.BtnCreateNewRestaurant = new System.Windows.Forms.Button();
-            this.BtnAddProductTypeToRestaurant = new System.Windows.Forms.Button();
+            this.BtnAddProductToRestaurant = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -47,16 +47,16 @@ namespace Neo4J_Repository.View
             this.BtnCreateNewRestaurant.UseVisualStyleBackColor = true;
             this.BtnCreateNewRestaurant.Click += new System.EventHandler(this.BtnCreateNewRestaurant_Click);
             // 
-            // BtnAddProductTypeToRestaurant
+            // BtnAddProductToRestaurant
             // 
-            this.BtnAddProductTypeToRestaurant.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnAddProductTypeToRestaurant.BackgroundImage")));
-            this.BtnAddProductTypeToRestaurant.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnAddProductTypeToRestaurant.Location = new System.Drawing.Point(350, 100);
-            this.BtnAddProductTypeToRestaurant.Name = "BtnAddProductTypeToRestaurant";
-            this.BtnAddProductTypeToRestaurant.Size = new System.Drawing.Size(150, 150);
-            this.BtnAddProductTypeToRestaurant.TabIndex = 2;
-            this.BtnAddProductTypeToRestaurant.UseVisualStyleBackColor = true;
-            this.BtnAddProductTypeToRestaurant.Click += new System.EventHandler(this.BtnAddProductTypeToRestaurant_Click);
+            this.BtnAddProductToRestaurant.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnAddProductToRestaurant.BackgroundImage")));
+            this.BtnAddProductToRestaurant.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnAddProductToRestaurant.Location = new System.Drawing.Point(350, 100);
+            this.BtnAddProductToRestaurant.Name = "BtnAddProductToRestaurant";
+            this.BtnAddProductToRestaurant.Size = new System.Drawing.Size(150, 150);
+            this.BtnAddProductToRestaurant.TabIndex = 2;
+            this.BtnAddProductToRestaurant.UseVisualStyleBackColor = true;
+            this.BtnAddProductToRestaurant.Click += new System.EventHandler(this.BtnAddProductToRestaurant_Click);
             // 
             // label1
             // 
@@ -72,7 +72,7 @@ namespace Neo4J_Repository.View
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(325, 275);
+            this.label2.Location = new System.Drawing.Point(320, 275);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(191, 20);
             this.label2.TabIndex = 4;
@@ -85,7 +85,7 @@ namespace Neo4J_Repository.View
             this.ClientSize = new System.Drawing.Size(584, 411);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.BtnAddProductTypeToRestaurant);
+            this.Controls.Add(this.BtnAddProductToRestaurant);
             this.Controls.Add(this.BtnCreateNewRestaurant);
             this.Name = "RestaurantView";
             this.Text = "RestaurantView";
@@ -97,7 +97,7 @@ namespace Neo4J_Repository.View
         #endregion
 
         private System.Windows.Forms.Button BtnCreateNewRestaurant;
-        private System.Windows.Forms.Button BtnAddProductTypeToRestaurant;
+        private System.Windows.Forms.Button BtnAddProductToRestaurant;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
     }
