@@ -48,6 +48,8 @@ namespace Neo4J_Repository.Forms
             {
                 selected.Add(s);
                 Product p = DataProvider.GetProduct(s);
+                string sr = p.Name;
+                restaurant.ProductLists.Add(sr);
                 restaurant.Products.Add(p);
 
                 DataProvider.AddRelationProductRestaurant(p, restaurant);

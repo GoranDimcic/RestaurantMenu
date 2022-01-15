@@ -8,7 +8,9 @@ namespace Neo4J_Repository.Domain
 {
     public class Bill
     {
-        public string Id { get; set; }
+        public String Id { get; set; }
+
+        public String NumberBill { get; set; }
 
         public DateTime Date { get; set; }
 
@@ -18,6 +20,12 @@ namespace Neo4J_Repository.Domain
 
         public Restaurant Restaurant { get; set; }
 
-        public Dictionary<string, int> Products;
+        public List<String> Products { get; set; }
+
+        public Bill()
+        {
+            TotalPrice = 0;
+            Products = new List<String>();
+        }
     }
 }

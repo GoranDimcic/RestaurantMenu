@@ -63,6 +63,15 @@ namespace Neo4J_Repository
                .ExecuteWithoutResults();
         }
 
+        internal static void AddBill(Bill newBill)
+        {
+            ConnectToTheBase();
+            client.Cypher
+               .Create("(b:Bill {newBill})")
+               .WithParam("newBill", newBill)
+               .ExecuteWithoutResults();
+        }
+
         #endregion
 
         #region Update
@@ -147,6 +156,72 @@ namespace Neo4J_Repository
                   .Where((Restaurant s) => s.Id == restaurant.Id)
                   .AndWhere((Product p) => p.Id == product.Id)
                   .Create("(s)-[:ima_proizvod_kolicina]->(p)")
+                  .ExecuteWithoutResults();
+        }
+
+        public static void AddRelationBillRestaurant(Bill bill, Restaurant restaurant)
+        {
+            ConnectToTheBase();
+            client.Cypher
+                  .Match("(b:Bill)", "(r:Restaurant)")
+                  .Where((Bill b) => b.Id == bill.Id)
+                  .AndWhere((Restaurant r) => r.Id == restaurant.Id)
+                  .Create("(b)-[:ima_iznos_restoran]->(r)")
+                  .ExecuteWithoutResults();
+        }
+
+        public static void AddRelationRestaurantBill(Restaurant restaurant, Bill bill)
+        {
+            ConnectToTheBase();
+            client.Cypher
+                  .Match("(r:Restaurant)", "(b:Bill)")
+                  .Where((Restaurant r) => r.Id == restaurant.Id)
+                  .AndWhere((Bill b) => b.Id == bill.Id)
+                  .Create("(r)-[:restoran_ima_racun]->(b)")
+                  .ExecuteWithoutResults();
+        }
+
+        public static void AddRelationBillCustomer(Bill bill, Customer customer)
+        {
+            ConnectToTheBase();
+            client.Cypher
+                  .Match("(b:Bill)", "(c:Customer)")
+                  .Where((Bill b) => b.Id == bill.Id)
+                  .AndWhere((Customer c) => c.Id == customer.Id)
+                  .Create("(b)-[:placa]->(c)")
+                  .ExecuteWithoutResults();
+        }
+
+        public static void AddRelationCustomerBill(Customer customer, Bill bill)
+        {
+            ConnectToTheBase();
+            client.Cypher
+                  .Match("(c:Customer)", "(b:Bill)")
+                  .Where((Customer c) => c.Id == customer.Id)
+                  .AndWhere((Bill b) => b.Id == bill.Id)
+                  .Create("(c)-[:je_napravio_racun]->(b)")
+                  .ExecuteWithoutResults();
+        }
+
+        public static void AddRelationBillProduct(Bill bill, Product product)
+        {
+            ConnectToTheBase();
+            client.Cypher
+                  .Match("(b:Bill)", "(p:Product)")
+                  .Where((Bill b) => b.Id == bill.Id)
+                  .AndWhere((Product p) => p.Id == product.Id)
+                  .Create("(b)-[:ima_proizvode]->(p)")
+                  .ExecuteWithoutResults();
+        }
+
+        public static void AddRelationProductBill(Product product, Bill bill)
+        {
+            ConnectToTheBase();
+            client.Cypher
+                  .Match("(p:Product)", "(b:Bill)")
+                  .Where((Product p) => p.Id == product.Id)
+                  .AndWhere((Bill b) => b.Id == bill.Id)
+                  .Create("(p)-[:se_nalazi_na]->(b)")
                   .ExecuteWithoutResults();
         }
 
@@ -264,6 +339,17 @@ namespace Neo4J_Repository
                      .Return(c => c.As<Customer>())
                      .Results.ToList();
             return customers;
+        }
+
+        public static List<Bill> GetBills()
+        {
+            ConnectToTheBase();
+            List<Bill> bills =
+             client.Cypher
+                     .Match("(b:Bill)")
+                     .Return(b => b.As<Bill>())
+                     .Results.ToList();
+            return bills;
         }
 
         #endregion

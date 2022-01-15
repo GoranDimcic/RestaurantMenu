@@ -36,7 +36,6 @@ namespace Neo4J_Repository.Forms
             this.BtnCreateRestaurant = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.TxtAddress = new System.Windows.Forms.TextBox();
-            this.checkedListBoxProducts = new System.Windows.Forms.CheckedListBox();
             this.SuspendLayout();
             // 
             // label1
@@ -81,9 +80,9 @@ namespace Neo4J_Repository.Forms
             // 
             // BtnCreateRestaurant
             // 
-            this.BtnCreateRestaurant.Location = new System.Drawing.Point(325, 180);
+            this.BtnCreateRestaurant.Location = new System.Drawing.Point(130, 182);
             this.BtnCreateRestaurant.Name = "BtnCreateRestaurant";
-            this.BtnCreateRestaurant.Size = new System.Drawing.Size(130, 40);
+            this.BtnCreateRestaurant.Size = new System.Drawing.Size(170, 40);
             this.BtnCreateRestaurant.TabIndex = 6;
             this.BtnCreateRestaurant.Text = "Create restaurant";
             this.BtnCreateRestaurant.UseVisualStyleBackColor = true;
@@ -108,22 +107,11 @@ namespace Neo4J_Repository.Forms
             this.TxtAddress.Size = new System.Drawing.Size(170, 26);
             this.TxtAddress.TabIndex = 13;
             // 
-            // checkedListBoxProducts
-            // 
-            this.checkedListBoxProducts.CheckOnClick = true;
-            this.checkedListBoxProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkedListBoxProducts.FormattingEnabled = true;
-            this.checkedListBoxProducts.Location = new System.Drawing.Point(130, 180);
-            this.checkedListBoxProducts.Name = "checkedListBoxProducts";
-            this.checkedListBoxProducts.Size = new System.Drawing.Size(170, 130);
-            this.checkedListBoxProducts.TabIndex = 14;
-            // 
             // AddRestaurant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 361);
-            this.Controls.Add(this.checkedListBoxProducts);
             this.Controls.Add(this.TxtAddress);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.BtnCreateRestaurant);
@@ -148,6 +136,5 @@ namespace Neo4J_Repository.Forms
         private System.Windows.Forms.Button BtnCreateRestaurant;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox TxtAddress;
-        private System.Windows.Forms.CheckedListBox checkedListBoxProducts;
     }
 }

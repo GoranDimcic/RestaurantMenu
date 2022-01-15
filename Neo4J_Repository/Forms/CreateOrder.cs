@@ -15,10 +15,12 @@ namespace Neo4J_Repository.Forms
     {
         public Customer Customer;
         public Restaurant Restaurant;
+        public Bill bill;
         public CreateOrder(Customer customer)
         {
             Customer = customer;
             Restaurant = new Restaurant();
+            bill = new Bill();
             InitializeComponent();
             FillRestaurants();
         }
@@ -44,24 +46,64 @@ namespace Neo4J_Repository.Forms
         {
             Restaurant = DataProvider.GetRestaurant1(comboBoxRestaurants.SelectedItem.ToString());
 
-            List<Product> proiyvodi = new List<Product>();
-            proiyvodi = Restaurant.Products;
+            List<string> products = new List<string>();
+            products = Restaurant.ProductLists;
 
-            foreach (Product product1 in proiyvodi)
+            foreach (String product in products)
             {
-                MessageBox.Show("Nesot " + product1);
-            }
-
-            List<Product> products = DataProvider.GetProducts(Restaurant);
-
-            foreach (Product product in products)
-            {
-                checkedListBoxProducts.Items.Add(product.Name);
+                Product prod = DataProvider.GetProduct(product);
+                checkedListBoxProducts.Items.Add(prod.Name);
             }
         }
 
         private void BtnCreateOrder_Click(object sender, EventArgs e)
         {
+            Restaurant = DataProvider.GetRestaurant1(comboBoxRestaurants.SelectedItem.ToString());
+            bill.Date = DateTime.Now;
+            foreach (String s in checkedListBoxProducts.CheckedItems)
+            {
+                bill.Products.Add(s);
+                Product p = DataProvider.GetProduct(s);
+                float price = p.Price;
+
+                bill.TotalPrice += price;
+            }
+            List<Bill> bills = DataProvider.GetBills();
+            int max = -1;
+
+            foreach (Bill bill in bills)
+            {
+                if (int.Parse(bill.Id) > max)
+                    max = int.Parse(bill.Id);
+            }
+            bill.Id = (max + 1).ToString();
+            bill.NumberBill = (max + 1).ToString();
+
+            DataProvider.AddBill(bill);
+
+            DataProvider.AddRelationRestaurantBill(Restaurant, bill);
+            DataProvider.AddRelationBillRestaurant(bill, Restaurant);
+
+            DataProvider.AddRelationCustomerBill(Customer, bill);
+            DataProvider.AddRelationBillCustomer(bill, Customer);
+
+            foreach (String s in checkedListBoxProducts.CheckedItems)
+            {
+                Product p = DataProvider.GetProduct(s);
+
+                DataProvider.AddRelationBillProduct(bill, p);
+                DataProvider.AddRelationProductBill(p, bill);
+            }
+
+            CreateBill form = new CreateBill(bill, Restaurant, Customer);
+            form.ShowDialog();
+
+            DialogResult = DialogResult.OK;
+        }
+
+        private void ComboBoxRestaurants_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Fill();
         }
     }
 }

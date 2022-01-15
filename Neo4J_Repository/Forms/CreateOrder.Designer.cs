@@ -44,6 +44,7 @@ namespace Neo4J_Repository.Forms
             this.comboBoxRestaurants.Name = "comboBoxRestaurants";
             this.comboBoxRestaurants.Size = new System.Drawing.Size(170, 28);
             this.comboBoxRestaurants.TabIndex = 0;
+            this.comboBoxRestaurants.SelectedIndexChanged += new System.EventHandler(this.ComboBoxRestaurants_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -57,6 +58,7 @@ namespace Neo4J_Repository.Forms
             // 
             // checkedListBoxProducts
             // 
+            this.checkedListBoxProducts.CheckOnClick = true;
             this.checkedListBoxProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkedListBoxProducts.FormattingEnabled = true;
             this.checkedListBoxProducts.Location = new System.Drawing.Point(150, 80);
