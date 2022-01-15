@@ -75,7 +75,7 @@ namespace Neo4J_Repository.Forms
             this.TxtPhone.Location = new System.Drawing.Point(130, 77);
             this.TxtPhone.Name = "TxtPhone";
             this.TxtPhone.Size = new System.Drawing.Size(150, 26);
-            this.TxtPhone.TabIndex = 5;
+            this.TxtPhone.TabIndex = 4;
             this.TxtPhone.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtEnter_KeyDown);
             this.TxtPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumberOnly_KeyPress);
             // 
@@ -106,7 +106,7 @@ namespace Neo4J_Repository.Forms
             this.TxtAddress.Location = new System.Drawing.Point(130, 132);
             this.TxtAddress.Name = "TxtAddress";
             this.TxtAddress.Size = new System.Drawing.Size(150, 26);
-            this.TxtAddress.TabIndex = 13;
+            this.TxtAddress.TabIndex = 5;
             // 
             // AddRestaurant
             // 

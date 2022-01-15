@@ -59,23 +59,17 @@ namespace Neo4J_Repository.Forms
         public bool Validation()
         {
             if (TxtPrice.Text.Equals(""))
-            {
                 return false;
-            }
             return true;
         }
 
         private void NumberOnly_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
-            {
                 e.Handled = true;
-            }
 
             if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
-            {
                 e.Handled = true;
-            }
         }
     }
 }

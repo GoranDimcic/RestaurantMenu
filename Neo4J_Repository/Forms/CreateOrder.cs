@@ -21,6 +21,7 @@ namespace Neo4J_Repository.Forms
             Customer = customer;
             Restaurant = new Restaurant();
             bill = new Bill();
+
             InitializeComponent();
             FillRestaurants();
         }

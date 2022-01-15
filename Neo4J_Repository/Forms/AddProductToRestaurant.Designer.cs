@@ -44,7 +44,7 @@ namespace Neo4J_Repository.Forms
             this.checkedListBoxProducts.Location = new System.Drawing.Point(150, 80);
             this.checkedListBoxProducts.Name = "checkedListBoxProducts";
             this.checkedListBoxProducts.Size = new System.Drawing.Size(170, 130);
-            this.checkedListBoxProducts.TabIndex = 12;
+            this.checkedListBoxProducts.TabIndex = 3;
             // 
             // label4
             // 
@@ -62,7 +62,7 @@ namespace Neo4J_Repository.Forms
             this.BtnAddProduct.Location = new System.Drawing.Point(150, 234);
             this.BtnAddProduct.Name = "BtnAddProduct";
             this.BtnAddProduct.Size = new System.Drawing.Size(170, 40);
-            this.BtnAddProduct.TabIndex = 13;
+            this.BtnAddProduct.TabIndex = 4;
             this.BtnAddProduct.Text = "Add product to restaurant";
             this.BtnAddProduct.UseVisualStyleBackColor = true;
             this.BtnAddProduct.Click += new System.EventHandler(this.BtnAddProduct_Click);
@@ -85,7 +85,7 @@ namespace Neo4J_Repository.Forms
             this.comboBoxRestaurant.Location = new System.Drawing.Point(150, 22);
             this.comboBoxRestaurant.Name = "comboBoxRestaurant";
             this.comboBoxRestaurant.Size = new System.Drawing.Size(170, 28);
-            this.comboBoxRestaurant.TabIndex = 16;
+            this.comboBoxRestaurant.TabIndex = 2;
             // 
             // AddProductToRestaurant
             // 

@@ -49,9 +49,7 @@ namespace Neo4J_Repository.Forms
         public bool Validation()
         {
             if (TxtName.Text.Equals(""))
-            {
                 return false;
-            }
             return true;
         }
 

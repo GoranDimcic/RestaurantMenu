@@ -27,6 +27,7 @@ namespace Neo4J_Repository.Domain
         public Restaurant()
         {
             BillLists = new List<String>();
+            ProductLists = new List<String>();
         }
     }
 }

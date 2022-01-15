@@ -82,9 +82,7 @@ namespace Neo4J_Repository.Forms
         public bool Validation()
         {
             if (TxtName.Text.Equals("") || TxtWeight.Text.Equals("") || TxtPrice.Text.Equals("") || TxtDescription.Text.Equals(""))
-            {
                 return false;
-            }
             return true;
         }
 
@@ -97,14 +95,10 @@ namespace Neo4J_Repository.Forms
         private void NumberOnly_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
-            {
                 e.Handled = true;
-            }
 
             if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
-            {
                 e.Handled = true;
-            }
         }
     }
 }

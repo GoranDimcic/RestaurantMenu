@@ -63,9 +63,9 @@ namespace Neo4J_Repository.Forms
 
                 DataProvider.AddRelationProductRestaurant(product, restaurant);
                 DataProvider.AddRelationRestaurantProduct(restaurant, product);
-
-                DialogResult = DialogResult.OK;
             }
+
+            DialogResult = DialogResult.OK;
         }
     }
 }
