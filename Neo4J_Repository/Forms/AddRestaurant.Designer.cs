@@ -36,6 +36,8 @@ namespace Neo4J_Repository.Forms
             this.BtnCreateRestaurant = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.TxtAddress = new System.Windows.Forms.TextBox();
+            this.checkedListBoxProducts = new System.Windows.Forms.CheckedListBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -65,7 +67,7 @@ namespace Neo4J_Repository.Forms
             this.TxtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtName.Location = new System.Drawing.Point(130, 22);
             this.TxtName.Name = "TxtName";
-            this.TxtName.Size = new System.Drawing.Size(150, 26);
+            this.TxtName.Size = new System.Drawing.Size(170, 26);
             this.TxtName.TabIndex = 3;
             this.TxtName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtEnter_KeyDown);
             // 
@@ -74,16 +76,16 @@ namespace Neo4J_Repository.Forms
             this.TxtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtPhone.Location = new System.Drawing.Point(130, 77);
             this.TxtPhone.Name = "TxtPhone";
-            this.TxtPhone.Size = new System.Drawing.Size(150, 26);
+            this.TxtPhone.Size = new System.Drawing.Size(170, 26);
             this.TxtPhone.TabIndex = 4;
             this.TxtPhone.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtEnter_KeyDown);
             this.TxtPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumberOnly_KeyPress);
             // 
             // BtnCreateRestaurant
             // 
-            this.BtnCreateRestaurant.Location = new System.Drawing.Point(130, 182);
+            this.BtnCreateRestaurant.Location = new System.Drawing.Point(130, 342);
             this.BtnCreateRestaurant.Name = "BtnCreateRestaurant";
-            this.BtnCreateRestaurant.Size = new System.Drawing.Size(150, 40);
+            this.BtnCreateRestaurant.Size = new System.Drawing.Size(170, 40);
             this.BtnCreateRestaurant.TabIndex = 6;
             this.BtnCreateRestaurant.Text = "Create restaurant";
             this.BtnCreateRestaurant.UseVisualStyleBackColor = true;
@@ -105,14 +107,37 @@ namespace Neo4J_Repository.Forms
             this.TxtAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtAddress.Location = new System.Drawing.Point(130, 132);
             this.TxtAddress.Name = "TxtAddress";
-            this.TxtAddress.Size = new System.Drawing.Size(150, 26);
+            this.TxtAddress.Size = new System.Drawing.Size(170, 26);
             this.TxtAddress.TabIndex = 5;
+            // 
+            // checkedListBoxProducts
+            // 
+            this.checkedListBoxProducts.CheckOnClick = true;
+            this.checkedListBoxProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkedListBoxProducts.FormattingEnabled = true;
+            this.checkedListBoxProducts.Location = new System.Drawing.Point(130, 182);
+            this.checkedListBoxProducts.Name = "checkedListBoxProducts";
+            this.checkedListBoxProducts.Size = new System.Drawing.Size(170, 130);
+            this.checkedListBoxProducts.TabIndex = 13;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(25, 182);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(64, 20);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "Product";
             // 
             // AddRestaurant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 261);
+            this.ClientSize = new System.Drawing.Size(384, 461);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.checkedListBoxProducts);
             this.Controls.Add(this.TxtAddress);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.BtnCreateRestaurant);
@@ -137,5 +162,7 @@ namespace Neo4J_Repository.Forms
         private System.Windows.Forms.Button BtnCreateRestaurant;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox TxtAddress;
+        private System.Windows.Forms.CheckedListBox checkedListBoxProducts;
+        private System.Windows.Forms.Label label4;
     }
 }

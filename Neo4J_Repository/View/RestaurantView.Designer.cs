@@ -31,61 +31,36 @@ namespace Neo4J_Repository.View
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RestaurantView));
             this.BtnCreateNewRestaurant = new System.Windows.Forms.Button();
-            this.BtnAddProductToRestaurant = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // BtnCreateNewRestaurant
             // 
             this.BtnCreateNewRestaurant.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnCreateNewRestaurant.BackgroundImage")));
             this.BtnCreateNewRestaurant.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnCreateNewRestaurant.Location = new System.Drawing.Point(50, 100);
+            this.BtnCreateNewRestaurant.Location = new System.Drawing.Point(150, 100);
             this.BtnCreateNewRestaurant.Name = "BtnCreateNewRestaurant";
             this.BtnCreateNewRestaurant.Size = new System.Drawing.Size(150, 150);
             this.BtnCreateNewRestaurant.TabIndex = 1;
             this.BtnCreateNewRestaurant.UseVisualStyleBackColor = true;
             this.BtnCreateNewRestaurant.Click += new System.EventHandler(this.BtnCreateNewRestaurant_Click);
             // 
-            // BtnAddProductToRestaurant
-            // 
-            this.BtnAddProductToRestaurant.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnAddProductToRestaurant.BackgroundImage")));
-            this.BtnAddProductToRestaurant.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnAddProductToRestaurant.Location = new System.Drawing.Point(350, 100);
-            this.BtnAddProductToRestaurant.Name = "BtnAddProductToRestaurant";
-            this.BtnAddProductToRestaurant.Size = new System.Drawing.Size(150, 150);
-            this.BtnAddProductToRestaurant.TabIndex = 2;
-            this.BtnAddProductToRestaurant.UseVisualStyleBackColor = true;
-            this.BtnAddProductToRestaurant.Click += new System.EventHandler(this.BtnAddProductToRestaurant_Click);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(40, 275);
+            this.label1.Location = new System.Drawing.Point(140, 275);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(167, 20);
             this.label1.TabIndex = 3;
             this.label1.Text = "Create new restaurant";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(320, 275);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(191, 20);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Add product to restaurant";
-            // 
             // RestaurantView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 411);
-            this.Controls.Add(this.label2);
+            this.ClientSize = new System.Drawing.Size(484, 361);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.BtnAddProductToRestaurant);
             this.Controls.Add(this.BtnCreateNewRestaurant);
             this.Name = "RestaurantView";
             this.Text = "RestaurantView";
@@ -97,8 +72,6 @@ namespace Neo4J_Repository.View
         #endregion
 
         private System.Windows.Forms.Button BtnCreateNewRestaurant;
-        private System.Windows.Forms.Button BtnAddProductToRestaurant;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
     }
 }

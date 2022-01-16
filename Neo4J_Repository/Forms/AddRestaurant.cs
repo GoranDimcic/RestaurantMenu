@@ -21,6 +21,17 @@ namespace Neo4J_Repository.Forms
         {
             restaurant = new Restaurant();
             InitializeComponent();
+            FillProducts();
+        }
+
+        public void FillProducts()
+        {
+            List<Product> products = DataProvider.GetProducts();
+
+            foreach (Product product in products)
+            {
+                checkedListBoxProducts.Items.Add(product.Name);
+            }
         }
 
         private void BtnCreateRestaurant_Click(object sender, EventArgs e)
@@ -42,6 +53,16 @@ namespace Neo4J_Repository.Forms
                         max = int.Parse(restaurant.Id);
                 }
                 restaurant.Id = (max + 1).ToString();
+
+                foreach (String s in checkedListBoxProducts.CheckedItems)
+                {
+                    Product product = DataProvider.GetProduct(s);
+                    string str = product.Name;
+                    restaurant.ProductLists.Add(str);
+
+                    DataProvider.AddRelationProductRestaurant(product, restaurant);
+                    DataProvider.AddRelationRestaurantProduct(restaurant, product);
+                }
 
                 DataProvider.AddRestaurant(restaurant);
 
